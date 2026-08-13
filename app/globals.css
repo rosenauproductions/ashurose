@@ -1,18 +1,24 @@
 @import "tailwindcss";
 
 :root {
-  --background: #161311;
-  --foreground: #f4efe8;
-  --muted: #b8aea4;
-  --rose: #c98b86;
-  --line: rgba(244, 239, 232, 0.12);
+  --background: #f6f1e8;
+  --foreground: #2c261f;
+  --muted: #6e665c;
+  --sage: #5f7260;
+  --terracotta: #c46a4a;
+  --sand: #e9dfd0;
+  --card: #fffcf7;
+  --line: rgba(44, 38, 31, 0.1);
 }
 
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
   --color-muted: var(--muted);
-  --color-rose: var(--rose);
+  --color-sage: var(--sage);
+  --color-terracotta: var(--terracotta);
+  --color-sand: var(--sand);
+  --color-card: var(--card);
   --color-line: var(--line);
   --font-sans: var(--font-geist-sans);
   --font-serif: var(--font-instrument-serif);

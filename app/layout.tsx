@@ -16,17 +16,17 @@ const instrumentSerif = Instrument_Serif({
 export const metadata: Metadata = {
   metadataBase: new URL("https://ashurose.com"),
   title: {
-    default: "Ashurose",
-    template: "%s · Ashurose",
+    default: "AshurRose",
+    template: "%s · AshurRose",
   },
   description:
-    "Ashurose builds software for families and trade-school careers. Home of FamilyFlow, a touch-screen family wall calendar, and Hinterviewer.",
+    "AshurRose builds FamilyFlow, a touch-screen family wall calendar, and Hinterviewer for trade-school careers.",
   openGraph: {
-    title: "Ashurose",
+    title: "AshurRose",
     description:
-      "Software studio behind FamilyFlow and Hinterviewer.",
+      "FamilyFlow, a touch-screen family wall calendar, and Hinterviewer.",
     url: "https://ashurose.com",
-    siteName: "Ashurose",
+    siteName: "AshurRose",
     type: "website",
   },
 };
