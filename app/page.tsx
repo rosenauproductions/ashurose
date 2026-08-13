@@ -22,6 +22,14 @@ export default function Home() {
             build tools people actually use—on the kitchen wall, and in the
             shop.
           </p>
+          <p className="mt-8">
+            <a
+              className="text-sm text-foreground underline decoration-rose/60 underline-offset-4 transition-colors hover:text-rose"
+              href="mailto:info@ashurose.com"
+            >
+              info@ashurose.com
+            </a>
+          </p>
         </section>
 
         <section className="flex flex-col gap-8">
@@ -44,7 +52,15 @@ export default function Home() {
               className="h-auto w-full"
             />
           </figure>
-          <p className="text-sm text-muted">Coming soon</p>
+          <div className="flex flex-wrap items-baseline gap-x-6 gap-y-2 text-sm">
+            <p className="text-muted">Coming soon</p>
+            <a
+              className="text-foreground underline decoration-rose/60 underline-offset-4 transition-colors hover:text-rose"
+              href="mailto:support@ashurose.com"
+            >
+              FamilyFlow support
+            </a>
+          </div>
         </section>
 
         <section>
@@ -69,8 +85,22 @@ export default function Home() {
         </section>
       </main>
 
-      <footer className="mx-auto w-full max-w-5xl border-t border-line px-6 py-8 text-sm text-muted">
+      <footer className="mx-auto flex w-full max-w-5xl flex-col gap-3 border-t border-line px-6 py-8 text-sm text-muted sm:flex-row sm:items-baseline sm:justify-between">
         <p>© {new Date().getFullYear()} Ashurose</p>
+        <p className="flex flex-wrap gap-x-4 gap-y-1">
+          <a
+            className="underline decoration-rose/40 underline-offset-4 transition-colors hover:text-rose"
+            href="mailto:chris.rosenau@ashurose.com"
+          >
+            Chris Rosenau
+          </a>
+          <a
+            className="underline decoration-rose/40 underline-offset-4 transition-colors hover:text-rose"
+            href="mailto:admin@ashurose.com"
+          >
+            admin@ashurose.com
+          </a>
+        </p>
       </footer>
     </div>
   );
