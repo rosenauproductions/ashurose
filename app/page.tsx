@@ -1,160 +1,241 @@
 import Image from "next/image";
 import familyflow from "../public/familyflow.png";
 
+const weekdays = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
+
 const benefits = [
   {
+    n: "01",
     title: "The week on the wall",
-    body: "Google Calendar, family events, and the day ahead—large enough to read from across the kitchen.",
+    body: "Google Calendar and family events, large enough to read from across the kitchen.",
   },
   {
+    n: "02",
     title: "Chores that get done",
-    body: "Assign tasks by person, check them off on the glass, and keep the household moving without another app on a phone.",
+    body: "Assign by person, check off on the glass—no extra app in anyone’s pocket.",
   },
   {
+    n: "03",
     title: "Built for touch",
-    body: "FamilyFlow is a wall calendar first. Fingers, not tiny taps. Designed for a kitchen display, not a pocket.",
+    body: "A wall calendar first. Fingers, not tiny taps. Kitchen display, not a phone.",
   },
   {
+    n: "04",
     title: "One household view",
-    body: "Schedules, lists, weather, and the little things everyone needs to see—together, in one calm place.",
+    body: "Schedules, lists, weather, and the day ahead—together, in one calm place.",
   },
 ];
 
 export default function Home() {
   return (
     <div className="flex flex-1 flex-col">
-      <header className="mx-auto flex w-full max-w-6xl items-center justify-between px-6 py-7">
-        <a href="#top" className="text-2xl font-semibold text-foreground">
-          AshurRose
+      <header className="relative z-20 mx-auto flex w-full max-w-6xl items-end justify-between px-6 pt-8 pb-4">
+        <a href="#top" className="leading-none">
+          <span className="block text-[11px] font-semibold uppercase text-sage">
+            Studio
+          </span>
+          <span className="mt-1 block text-3xl font-bold tracking-normal">
+            AshurRose
+          </span>
         </a>
-        <nav className="hidden items-center gap-8 text-sm text-muted sm:flex">
-          <a className="transition-colors hover:text-foreground" href="#familyflow">
+        <nav className="hidden gap-7 text-sm font-medium text-muted sm:flex">
+          <a className="hover:text-foreground" href="#familyflow">
             FamilyFlow
           </a>
-          <a className="transition-colors hover:text-foreground" href="#hinterviewer">
+          <a className="hover:text-foreground" href="#hinterviewer">
             Hinterviewer
           </a>
-          <a className="transition-colors hover:text-foreground" href="#contact">
+          <a className="hover:text-foreground" href="#contact">
             Contact
           </a>
         </nav>
       </header>
 
-      <main id="top" className="mx-auto flex w-full max-w-6xl flex-1 flex-col px-6 pb-24">
-        <section className="grid items-center gap-12 pb-8 pt-6 lg:grid-cols-[minmax(0,1fr)_minmax(0,1.15fr)] lg:gap-16 lg:pt-10">
-          <div>
-            <p className="text-sm font-medium uppercase tracking-[0.18em] text-sage">
-              FamilyFlow
-            </p>
-            <h1 className="mt-4 text-5xl font-semibold leading-[1.15] text-foreground sm:text-6xl">
-              The family calendar that belongs on the wall.
-            </h1>
-            <p className="mt-6 max-w-lg text-lg leading-8 text-muted">
-              FamilyFlow is a touch-screen wall calendar from AshurRose.
-              Shared schedules, chores, lists, and weather—built for the
-              kitchen, not another phone in a pocket.
-            </p>
-            <div className="mt-8 flex flex-wrap items-center gap-4">
-              <a
-                className="inline-flex rounded-full bg-terracotta px-6 py-3 text-sm font-medium text-white shadow-sm transition-opacity hover:opacity-90"
-                href="mailto:info@ashurose.com"
-              >
-                Join the waitlist
-              </a>
-              <a
-                className="inline-flex rounded-full border border-line bg-card px-6 py-3 text-sm font-medium text-foreground transition-colors hover:bg-sand"
-                href="mailto:support@ashurose.com"
-              >
-                FamilyFlow support
-              </a>
-            </div>
-            <p className="mt-4 text-sm text-muted">Coming soon · info@ashurose.com</p>
-          </div>
+      <main id="top" className="flex flex-1 flex-col">
+        <section className="relative overflow-hidden pb-8 pt-4">
+          <div
+            aria-hidden
+            className="wall-grid pointer-events-none absolute inset-0 opacity-80"
+          />
+          <div
+            aria-hidden
+            className="absolute -left-24 top-10 h-72 w-72 rounded-full bg-clay/70 blur-2xl"
+          />
+          <div
+            aria-hidden
+            className="absolute right-[8%] top-24 hidden h-40 w-40 rounded-[2rem] bg-sage/25 lg:block"
+          />
 
-          <figure className="overflow-hidden rounded-3xl border border-line bg-card shadow-[0_28px_60px_rgba(44,38,31,0.12)]">
-            <Image
-              src={familyflow}
-              alt="FamilyFlow touch-screen family calendar showing week view, chores, weather, and clock"
-              priority
-              sizes="(max-width: 1024px) 100vw, 640px"
-              className="h-auto w-full"
-            />
-          </figure>
+          <div className="relative mx-auto grid w-full max-w-6xl items-start gap-10 px-6 lg:grid-cols-12 lg:gap-8">
+            <div className="lg:col-span-5 lg:pt-10">
+              <p className="inline-flex rounded-full bg-sage-deep px-3 py-1 text-[11px] font-semibold uppercase text-card">
+                FamilyFlow · coming soon
+              </p>
+              <h1 className="mt-6 text-5xl font-bold leading-[1.08] sm:text-6xl lg:text-[4.4rem]">
+                Hang the week
+                <span className="mt-1 block text-terracotta">on the wall.</span>
+              </h1>
+              <p className="mt-6 max-w-md text-lg leading-8 text-muted">
+                FamilyFlow is the AshurRose touch-screen family calendar.
+                Shared schedules, chores, lists, and weather—built for the
+                kitchen, not another phone.
+              </p>
+              <div className="mt-8 flex flex-wrap gap-3">
+                <a
+                  className="inline-flex rounded-full bg-terracotta px-6 py-3 text-sm font-semibold text-white hover:opacity-90"
+                  href="mailto:info@ashurose.com"
+                >
+                  Join the waitlist
+                </a>
+                <a
+                  className="inline-flex rounded-full border border-line bg-card px-6 py-3 text-sm font-semibold hover:bg-sand"
+                  href="mailto:support@ashurose.com"
+                >
+                  support@ashurose.com
+                </a>
+              </div>
+            </div>
+
+            <div className="relative lg:col-span-7 lg:min-h-[28rem]">
+              <div
+                aria-hidden
+                className="absolute -bottom-6 left-6 right-16 top-16 rounded-[2.5rem] bg-sage-deep lg:left-10"
+              />
+              <div
+                aria-hidden
+                className="absolute -right-4 top-0 h-28 w-28 rounded-full bg-terracotta/80 lg:right-2"
+              />
+              <figure className="relative z-10 -rotate-2 overflow-hidden rounded-[2rem] border-[6px] border-card shadow-[0_30px_70px_rgba(42,36,28,0.22)] lg:ml-8 lg:mt-6">
+                <div className="relative aspect-[16/10] w-full">
+                  <Image
+                    src={familyflow}
+                    alt="FamilyFlow touch-screen family calendar showing week view, chores, weather, and clock"
+                    fill
+                    priority
+                    sizes="(max-width: 1024px) 100vw, 720px"
+                    className="object-cover object-[center_20%]"
+                  />
+                </div>
+              </figure>
+              <p className="relative z-10 mt-8 ml-auto max-w-xs rotate-1 rounded-2xl bg-card px-4 py-3 text-sm leading-6 text-muted shadow-sm lg:mr-4">
+                Week view, chores, weather, and the clock—meant to live where
+                the family already gathers.
+              </p>
+            </div>
+          </div>
         </section>
 
-        <section id="familyflow" className="pt-16">
-          <h2 className="max-w-2xl text-4xl font-semibold leading-snug">
-            Everything the household needs to see, without picking up a phone.
-          </h2>
-          <div className="mt-10 grid gap-5 sm:grid-cols-2">
+        <div
+          aria-hidden
+          className="grid grid-cols-7 border-y border-line bg-card text-center text-[11px] font-semibold uppercase text-muted"
+        >
+          {weekdays.map((day) => (
+            <span
+              key={day}
+              className="border-r border-line py-3 last:border-r-0"
+            >
+              {day}
+            </span>
+          ))}
+        </div>
+
+        <section id="familyflow" className="mx-auto w-full max-w-6xl px-6 py-20">
+          <div className="flex flex-col gap-6 lg:flex-row lg:items-end lg:justify-between">
+            <h2 className="max-w-xl text-4xl font-bold leading-tight sm:text-5xl">
+              Four things the household should never hunt for.
+            </h2>
+            <p className="max-w-sm text-muted">
+              FamilyFlow puts the week where everyone can see it—and touch it.
+            </p>
+          </div>
+          <div className="mt-12 grid gap-px overflow-hidden rounded-3xl border border-line bg-line sm:grid-cols-2">
             {benefits.map((item) => (
-              <article
-                key={item.title}
-                className="rounded-3xl border border-line bg-card p-8 shadow-[0_10px_30px_rgba(44,38,31,0.05)]"
-              >
-                <h3 className="text-2xl font-semibold">{item.title}</h3>
+              <article key={item.n} className="bg-card p-8 sm:p-10">
+                <p className="text-4xl font-bold text-clay">{item.n}</p>
+                <h3 className="mt-4 text-2xl font-semibold">{item.title}</h3>
                 <p className="mt-3 leading-7 text-muted">{item.body}</p>
               </article>
             ))}
           </div>
         </section>
 
-        <section
-          id="hinterviewer"
-          className="mt-20 rounded-3xl border border-line bg-sand/50 px-8 py-12 sm:px-12"
-        >
-          <p className="text-sm font-medium uppercase tracking-[0.18em] text-sage">
-            Also from AshurRose
+        <section className="relative overflow-hidden bg-sage-deep py-16 text-card">
+          <p className="pointer-events-none absolute -bottom-8 left-0 text-[18vw] font-bold leading-none text-white/5">
+            WALL
           </p>
-          <h2 className="mt-3 text-3xl font-semibold sm:text-4xl">
-            Hinterviewer
-          </h2>
-          <p className="mt-4 max-w-xl leading-7 text-muted">
-            Video resumes for trade schools. Students show hands-on skill;
-            employers see what a paper résumé cannot.
-          </p>
-          <a
-            className="mt-6 inline-flex text-sm font-medium text-foreground underline decoration-terracotta/70 underline-offset-4 transition-colors hover:text-terracotta"
-            href="https://hinterviewer.com/"
-            rel="noopener noreferrer"
-            target="_blank"
-          >
-            Visit hinterviewer.com
-          </a>
+          <div className="relative mx-auto max-w-6xl px-6">
+            <p className="text-sm font-semibold uppercase text-clay">
+              For the kitchen
+            </p>
+            <p className="mt-3 max-w-3xl text-4xl font-bold leading-tight sm:text-5xl">
+              Not another dashboard.
+              <span className="text-clay"> A family wall.</span>
+            </p>
+          </div>
         </section>
 
-        <section id="contact" className="mt-20 max-w-xl">
-          <h2 className="text-4xl font-semibold">Say hello</h2>
-          <p className="mt-4 leading-7 text-muted">
-            Questions about FamilyFlow, waitlist access, or AshurRose—write
-            to us. We read every note.
-          </p>
-          <a
-            className="mt-6 inline-flex rounded-full bg-terracotta px-6 py-3 text-sm font-medium text-white shadow-sm transition-opacity hover:opacity-90"
-            href="mailto:info@ashurose.com"
-          >
-            info@ashurose.com
-          </a>
+        <section
+          id="hinterviewer"
+          className="mx-auto grid w-full max-w-6xl gap-8 px-6 py-20 lg:grid-cols-12"
+        >
+          <div className="flex items-end lg:col-span-4">
+            <p className="text-[6rem] font-bold leading-none text-sand">HV</p>
+          </div>
+          <div className="lg:col-span-8 lg:pt-8">
+            <p className="text-sm font-semibold uppercase text-sage">
+              Also from AshurRose
+            </p>
+            <h2 className="mt-2 text-4xl font-bold">Hinterviewer</h2>
+            <p className="mt-4 max-w-lg text-lg leading-8 text-muted">
+              Video resumes for trade schools. Students show hands-on skill;
+              employers see what a paper résumé cannot.
+            </p>
+            <a
+              className="mt-6 inline-flex font-semibold underline decoration-terracotta decoration-2 underline-offset-4 hover:text-terracotta"
+              href="https://hinterviewer.com/"
+              rel="noopener noreferrer"
+              target="_blank"
+            >
+              hinterviewer.com
+            </a>
+          </div>
+        </section>
+
+        <section
+          id="contact"
+          className="mx-auto mb-16 w-full max-w-6xl px-6"
+        >
+          <div className="relative overflow-hidden rounded-[2rem] bg-terracotta px-8 py-14 text-white sm:px-14">
+            <div
+              aria-hidden
+              className="absolute -right-10 -top-10 h-40 w-40 rounded-full bg-clay/40"
+            />
+            <h2 className="relative text-4xl font-bold sm:text-5xl">
+              Write to the studio.
+            </h2>
+            <p className="relative mt-4 max-w-lg text-lg text-white/85">
+              Waitlist, FamilyFlow questions, or anything else—aliases only,
+              we read them.
+            </p>
+            <a
+              className="relative mt-8 inline-flex rounded-full bg-card px-6 py-3 text-sm font-semibold text-foreground hover:bg-sand"
+              href="mailto:info@ashurose.com"
+            >
+              info@ashurose.com
+            </a>
+          </div>
         </section>
       </main>
 
-      <footer className="border-t border-line bg-card/60">
-        <div className="mx-auto flex w-full max-w-6xl flex-col gap-3 px-6 py-8 text-sm text-muted sm:flex-row sm:items-baseline sm:justify-between">
+      <footer className="border-t border-line">
+        <div className="mx-auto flex w-full max-w-6xl flex-col gap-2 px-6 py-8 text-sm text-muted sm:flex-row sm:items-baseline sm:justify-between">
           <p>© {new Date().getFullYear()} AshurRose</p>
-          <p className="flex flex-wrap gap-x-5 gap-y-1">
-            <a
-              className="underline decoration-terracotta/40 underline-offset-4 transition-colors hover:text-terracotta"
-              href="mailto:chris.rosenau@ashurose.com"
-            >
-              Chris Rosenau
-            </a>
-            <a
-              className="underline decoration-terracotta/40 underline-offset-4 transition-colors hover:text-terracotta"
-              href="mailto:admin@ashurose.com"
-            >
-              admin@ashurose.com
-            </a>
-          </p>
+          <a
+            className="hover:text-foreground"
+            href="mailto:admin@ashurose.com"
+          >
+            admin@ashurose.com
+          </a>
         </div>
       </footer>
     </div>

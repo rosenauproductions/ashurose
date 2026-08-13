@@ -1,14 +1,16 @@
 @import "tailwindcss";
 
 :root {
-  --background: #f6f1e8;
-  --foreground: #2c261f;
-  --muted: #6e665c;
-  --sage: #5f7260;
-  --terracotta: #c46a4a;
-  --sand: #e9dfd0;
-  --card: #fffcf7;
-  --line: rgba(44, 38, 31, 0.1);
+  --background: #f4efe4;
+  --foreground: #2a241c;
+  --muted: #6a6258;
+  --sage: #5c735c;
+  --sage-deep: #3f5340;
+  --terracotta: #c45c3a;
+  --clay: #e8b89a;
+  --sand: #eadcc8;
+  --card: #fffaf3;
+  --line: rgba(42, 36, 28, 0.12);
 }
 
 @theme inline {
@@ -16,7 +18,9 @@
   --color-foreground: var(--foreground);
   --color-muted: var(--muted);
   --color-sage: var(--sage);
+  --color-sage-deep: var(--sage-deep);
   --color-terracotta: var(--terracotta);
+  --color-clay: var(--clay);
   --color-sand: var(--sand);
   --color-card: var(--card);
   --color-line: var(--line);
@@ -28,4 +32,12 @@ body {
   background: var(--background);
   color: var(--foreground);
   font-family: var(--font-sans), system-ui, sans-serif;
+}
+
+.wall-grid {
+  background-image:
+    linear-gradient(to right, rgba(42, 36, 28, 0.07) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(42, 36, 28, 0.07) 1px, transparent 1px);
+  background-size: 14.2857% 5rem;
+  background-position: center top;
 }
