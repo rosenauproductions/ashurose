@@ -24,7 +24,7 @@ export default function Home() {
   return (
     <div className="flex flex-1 flex-col">
       <header className="mx-auto flex w-full max-w-6xl items-center justify-between px-6 py-7">
-        <a href="#top" className="font-serif text-2xl tracking-tight text-foreground">
+        <a href="#top" className="text-2xl font-semibold text-foreground">
           AshurRose
         </a>
         <nav className="hidden items-center gap-8 text-sm text-muted sm:flex">
@@ -46,7 +46,7 @@ export default function Home() {
             <p className="text-sm font-medium uppercase tracking-[0.18em] text-sage">
               FamilyFlow
             </p>
-            <h1 className="mt-4 font-serif text-5xl leading-[1.08] tracking-tight text-foreground sm:text-6xl">
+            <h1 className="mt-4 text-5xl font-semibold leading-[1.15] text-foreground sm:text-6xl">
               The family calendar that belongs on the wall.
             </h1>
             <p className="mt-6 max-w-lg text-lg leading-8 text-muted">
@@ -83,7 +83,7 @@ export default function Home() {
         </section>
 
         <section id="familyflow" className="pt-16">
-          <h2 className="max-w-2xl font-serif text-4xl tracking-tight">
+          <h2 className="max-w-2xl text-4xl font-semibold leading-snug">
             Everything the household needs to see, without picking up a phone.
           </h2>
           <div className="mt-10 grid gap-5 sm:grid-cols-2">
@@ -92,7 +92,7 @@ export default function Home() {
                 key={item.title}
                 className="rounded-3xl border border-line bg-card p-8 shadow-[0_10px_30px_rgba(44,38,31,0.05)]"
               >
-                <h3 className="font-serif text-2xl tracking-tight">{item.title}</h3>
+                <h3 className="text-2xl font-semibold">{item.title}</h3>
                 <p className="mt-3 leading-7 text-muted">{item.body}</p>
               </article>
             ))}
@@ -106,7 +106,7 @@ export default function Home() {
           <p className="text-sm font-medium uppercase tracking-[0.18em] text-sage">
             Also from AshurRose
           </p>
-          <h2 className="mt-3 font-serif text-3xl tracking-tight sm:text-4xl">
+          <h2 className="mt-3 text-3xl font-semibold sm:text-4xl">
             Hinterviewer
           </h2>
           <p className="mt-4 max-w-xl leading-7 text-muted">
@@ -124,7 +124,7 @@ export default function Home() {
         </section>
 
         <section id="contact" className="mt-20 max-w-xl">
-          <h2 className="font-serif text-4xl tracking-tight">Say hello</h2>
+          <h2 className="text-4xl font-semibold">Say hello</h2>
           <p className="mt-4 leading-7 text-muted">
             Questions about FamilyFlow, waitlist access, or AshurRose—write
             to us. We read every note.

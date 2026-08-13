@@ -20,8 +20,8 @@
   --color-sand: var(--sand);
   --color-card: var(--card);
   --color-line: var(--line);
-  --font-sans: var(--font-geist-sans);
-  --font-serif: var(--font-instrument-serif);
+  --font-sans: var(--font-libre-franklin), system-ui, sans-serif;
+  --font-serif: var(--font-libre-franklin), system-ui, sans-serif;
 }
 
 body {
