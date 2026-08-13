@@ -1,3 +1,6 @@
+import Image from "next/image";
+import familyflow from "../public/familyflow.png";
+
 export default function Home() {
   return (
     <div className="flex flex-1 flex-col">
@@ -21,25 +24,36 @@ export default function Home() {
           </p>
         </section>
 
-        <section className="grid gap-6 sm:grid-cols-2">
-          <article className="flex flex-col border border-line p-8">
+        <section className="flex flex-col gap-8">
+          <div className="max-w-2xl">
             <p className="text-xs uppercase tracking-[0.18em] text-rose">
               Primary product
             </p>
             <h2 className="mt-3 font-serif text-3xl">FamilyFlow</h2>
-            <p className="mt-4 flex-1 leading-7 text-muted">
+            <p className="mt-4 leading-7 text-muted">
               A touch-screen family wall calendar. Shared schedules, chores,
               and the day ahead—built for the kitchen, not a phone.
             </p>
-            <p className="mt-8 text-sm text-muted">Coming soon</p>
-          </article>
+          </div>
+          <figure className="overflow-hidden rounded-2xl border border-line bg-black/20 shadow-[0_24px_80px_rgba(0,0,0,0.45)]">
+            <Image
+              src={familyflow}
+              alt="FamilyFlow touch-screen family calendar showing week view, chores, weather, and clock"
+              priority
+              sizes="(max-width: 1024px) 100vw, 1024px"
+              className="h-auto w-full"
+            />
+          </figure>
+          <p className="text-sm text-muted">Coming soon</p>
+        </section>
 
-          <article className="flex flex-col border border-line p-8">
+        <section>
+          <article className="flex max-w-xl flex-col border border-line p-8">
             <p className="text-xs uppercase tracking-[0.18em] text-rose">
               Product
             </p>
             <h2 className="mt-3 font-serif text-3xl">Hinterviewer</h2>
-            <p className="mt-4 flex-1 leading-7 text-muted">
+            <p className="mt-4 leading-7 text-muted">
               Video resumes for trade schools. Students show hands-on skill;
               employers see what a paper résumé cannot.
             </p>
