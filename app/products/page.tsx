@@ -16,7 +16,7 @@ export default function ProductsPage() {
       <SiteHeader />
 
       <main className="mx-auto w-full max-w-6xl flex-1 px-6 py-12">
-        <p className="text-sm font-semibold uppercase text-sage">AshurRose</p>
+        <p className="text-sm font-semibold uppercase text-sky">AshurRose</p>
         <h1 className="mt-2 text-4xl font-bold sm:text-5xl">Products</h1>
         <p className="mt-4 max-w-xl text-lg leading-8 text-muted">
           Tools for the home, and for the trades.
@@ -24,7 +24,7 @@ export default function ProductsPage() {
 
         <div className="mt-12 grid gap-8 lg:grid-cols-2">
           <article className="flex flex-col overflow-hidden rounded-[2rem] border border-line bg-card">
-            <div className="relative aspect-[16/10] w-full bg-sand">
+            <div className="relative aspect-[16/10] w-full bg-frost">
               <Image
                 src={familyflow}
                 alt="FamilyFlow touch-screen family calendar showing week view, chores, weather, and clock"
@@ -34,7 +34,7 @@ export default function ProductsPage() {
               />
             </div>
             <div className="flex flex-1 flex-col p-8">
-              <p className="text-xs font-semibold uppercase text-terracotta">
+              <p className="text-xs font-semibold uppercase text-cta">
                 Primary
               </p>
               <h2 className="mt-2 text-3xl font-bold">FamilyFlow</h2>
@@ -44,13 +44,13 @@ export default function ProductsPage() {
               </p>
               <div className="mt-6 flex flex-wrap gap-4 text-sm font-semibold">
                 <Link
-                  className="underline decoration-terracotta decoration-2 underline-offset-4 hover:text-terracotta"
+                  className="underline decoration-cta decoration-2 underline-offset-4 hover:text-cta"
                   href="/"
                 >
                   View FamilyFlow
                 </Link>
                 <a
-                  className="hover:text-terracotta"
+                  className="hover:text-cta"
                   href="mailto:support@ashurose.com"
                 >
                   support@ashurose.com
@@ -59,15 +59,15 @@ export default function ProductsPage() {
             </div>
           </article>
 
-          <article className="flex flex-col rounded-[2rem] border border-line bg-sand/60 p-8">
-            <p className="text-[5rem] font-bold leading-none text-clay">HV</p>
+          <article className="flex flex-col rounded-[2rem] border border-line bg-frost/60 p-8">
+            <p className="text-[5rem] font-bold leading-none text-mist">HV</p>
             <h2 className="mt-6 text-3xl font-bold">Hinterviewer</h2>
             <p className="mt-3 flex-1 leading-7 text-muted">
               Video resumes for trade schools. Students show hands-on skill;
               employers see what a paper résumé cannot.
             </p>
             <a
-              className="mt-6 inline-flex text-sm font-semibold underline decoration-terracotta decoration-2 underline-offset-4 hover:text-terracotta"
+              className="mt-6 inline-flex text-sm font-semibold underline decoration-cta decoration-2 underline-offset-4 hover:text-cta"
               href="https://hinterviewer.com/"
               rel="noopener noreferrer"
               target="_blank"

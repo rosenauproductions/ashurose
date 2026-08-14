@@ -1,27 +1,27 @@
 @import "tailwindcss";
 
 :root {
-  --background: #f4efe4;
-  --foreground: #2a241c;
-  --muted: #6a6258;
-  --sage: #5c735c;
-  --sage-deep: #3f5340;
-  --terracotta: #c45c3a;
-  --clay: #e8b89a;
-  --sand: #eadcc8;
-  --card: #fffaf3;
-  --line: rgba(42, 36, 28, 0.12);
+  --background: #f7fafc;
+  --foreground: #1c2430;
+  --muted: #5c6778;
+  --sky: #4a8bb8;
+  --sky-deep: #3a6f96;
+  --cta: #2b7bbf;
+  --mist: #b7d4ea;
+  --frost: #eef5fa;
+  --card: #ffffff;
+  --line: rgba(28, 36, 48, 0.1);
 }
 
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
   --color-muted: var(--muted);
-  --color-sage: var(--sage);
-  --color-sage-deep: var(--sage-deep);
-  --color-terracotta: var(--terracotta);
-  --color-clay: var(--clay);
-  --color-sand: var(--sand);
+  --color-sky: var(--sky);
+  --color-sky-deep: var(--sky-deep);
+  --color-cta: var(--cta);
+  --color-mist: var(--mist);
+  --color-frost: var(--frost);
   --color-card: var(--card);
   --color-line: var(--line);
   --font-sans: var(--font-libre-franklin), system-ui, sans-serif;
@@ -36,8 +36,8 @@ body {
 
 .wall-grid {
   background-image:
-    linear-gradient(to right, rgba(42, 36, 28, 0.07) 1px, transparent 1px),
-    linear-gradient(to bottom, rgba(42, 36, 28, 0.07) 1px, transparent 1px);
+    linear-gradient(to right, rgba(28, 36, 48, 0.06) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(28, 36, 48, 0.06) 1px, transparent 1px);
   background-size: 14.2857% 5rem;
   background-position: center top;
 }

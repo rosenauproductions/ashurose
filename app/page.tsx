@@ -7,23 +7,23 @@ const weekdays = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
 const benefits = [
   {
     n: "01",
-    title: "The week on the wall",
-    body: "Google Calendar and family events, large enough to read from across the kitchen.",
+    title: "The week, full size",
+    body: "Google Calendar synced live. Day, week, or month views large enough to read from across the kitchen. Multi-person colors, touch navigation, and add/edit right on the glass.",
   },
   {
     n: "02",
-    title: "Chores that get done",
-    body: "Assign by person, check off on the glass—no extra app in anyone’s pocket.",
+    title: "Chores that actually get done",
+    body: "Assign by person, check off on the wall, celebrate when the list is clear. No extra app in anyone’s pocket—just fingers on glass.",
   },
   {
     n: "03",
-    title: "Built for touch",
-    body: "A wall calendar first. Fingers, not tiny taps. Kitchen display, not a phone.",
+    title: "Built for the wall, not the phone",
+    body: "Kiosk mode, big touch targets, sleep schedule, and a display that feels at home in the kitchen. Designed first for standing and glancing, not scrolling.",
   },
   {
     n: "04",
-    title: "One household view",
-    body: "Schedules, lists, weather, and the day ahead—together, in one calm place.",
+    title: "One calm household view",
+    body: "Calendar, chores, lists, and the week’s weather—together in a single, shared space everyone can use.",
   },
 ];
 
@@ -40,21 +40,21 @@ export default function Home() {
           />
           <div
             aria-hidden
-            className="absolute -left-24 top-10 h-72 w-72 rounded-full bg-clay/70 blur-2xl"
+            className="absolute -left-24 top-10 h-72 w-72 rounded-full bg-mist/70 blur-2xl"
           />
           <div
             aria-hidden
-            className="absolute right-[8%] top-24 hidden h-40 w-40 rounded-[2rem] bg-sage/25 lg:block"
+            className="absolute right-[8%] top-24 hidden h-40 w-40 rounded-[2rem] bg-sky/25 lg:block"
           />
 
           <div className="relative mx-auto grid w-full max-w-6xl items-start gap-10 px-6 lg:grid-cols-12 lg:gap-8">
             <div className="lg:col-span-5 lg:pt-10">
-              <p className="inline-flex rounded-full bg-sage-deep px-3 py-1 text-[11px] font-semibold uppercase text-card">
+              <p className="inline-flex rounded-full bg-sky-deep px-3 py-1 text-[11px] font-semibold uppercase text-card">
                 FamilyFlow · coming soon
               </p>
               <h1 className="mt-6 text-5xl font-bold leading-[1.08] sm:text-6xl lg:text-[4.4rem]">
                 Hang the week
-                <span className="mt-1 block text-terracotta">on the wall.</span>
+                <span className="mt-1 block text-cta">on the wall.</span>
               </h1>
               <p className="mt-6 max-w-md text-lg leading-8 text-muted">
                 FamilyFlow is a touch-screen family calendar. Shared schedules,
@@ -63,13 +63,13 @@ export default function Home() {
               </p>
               <div className="mt-8 flex flex-wrap gap-3">
                 <a
-                  className="inline-flex rounded-full bg-terracotta px-6 py-3 text-sm font-semibold text-white hover:opacity-90"
+                  className="inline-flex rounded-full bg-cta px-6 py-3 text-sm font-semibold text-white hover:opacity-90"
                   href="mailto:info@ashurose.com"
                 >
                   Join the waitlist
                 </a>
                 <a
-                  className="inline-flex rounded-full border border-line bg-card px-6 py-3 text-sm font-semibold hover:bg-sand"
+                  className="inline-flex rounded-full border border-line bg-card px-6 py-3 text-sm font-semibold hover:bg-frost"
                   href="mailto:support@ashurose.com"
                 >
                   support@ashurose.com
@@ -80,13 +80,13 @@ export default function Home() {
             <div className="relative lg:col-span-7 lg:min-h-[28rem]">
               <div
                 aria-hidden
-                className="absolute -bottom-6 left-6 right-16 top-16 rounded-[2.5rem] bg-sage-deep lg:left-10"
+                className="absolute -bottom-6 left-6 right-16 top-16 rounded-[2.5rem] bg-sky-deep lg:left-10"
               />
               <div
                 aria-hidden
-                className="absolute -right-4 top-0 h-28 w-28 rounded-full bg-terracotta/80 lg:right-2"
+                className="absolute -right-4 top-0 h-28 w-28 rounded-full bg-cta/80 lg:right-2"
               />
-              <figure className="relative z-10 -rotate-2 overflow-hidden rounded-[2rem] border-[6px] border-card shadow-[0_30px_70px_rgba(42,36,28,0.22)] lg:ml-8 lg:mt-6">
+              <figure className="relative z-10 -rotate-2 overflow-hidden rounded-[2rem] border-[6px] border-card shadow-[0_30px_70px_rgba(28,36,48,0.16)] lg:ml-8 lg:mt-6">
                 <div className="relative aspect-[16/10] w-full">
                   <Image
                     src={familyflow}
@@ -123,16 +123,17 @@ export default function Home() {
         <section id="familyflow" className="mx-auto w-full max-w-6xl px-6 py-20">
           <div className="flex flex-col gap-6 lg:flex-row lg:items-end lg:justify-between">
             <h2 className="max-w-xl text-4xl font-bold leading-tight sm:text-5xl">
-              Four things the household should never hunt for.
+              Four things every household should stop hunting for.
             </h2>
             <p className="max-w-sm text-muted">
-              FamilyFlow puts the week where everyone can see it—and touch it.
+              FamilyFlow puts the week on the wall—where everyone can see it and
+              touch it.
             </p>
           </div>
           <div className="mt-12 grid gap-px overflow-hidden rounded-3xl border border-line bg-line sm:grid-cols-2">
             {benefits.map((item) => (
               <article key={item.n} className="bg-card p-8 sm:p-10">
-                <p className="text-4xl font-bold text-clay">{item.n}</p>
+                <p className="text-4xl font-bold text-mist">{item.n}</p>
                 <h3 className="mt-4 text-2xl font-semibold">{item.title}</h3>
                 <p className="mt-3 leading-7 text-muted">{item.body}</p>
               </article>
@@ -140,26 +141,26 @@ export default function Home() {
           </div>
         </section>
 
-        <section className="relative overflow-hidden bg-sage-deep py-16 text-card">
+        <section className="relative overflow-hidden bg-sky-deep py-16 text-card">
           <p className="pointer-events-none absolute -bottom-8 left-0 text-[18vw] font-bold leading-none text-white/5">
             WALL
           </p>
           <div className="relative mx-auto max-w-6xl px-6">
-            <p className="text-sm font-semibold uppercase text-clay">
+            <p className="text-sm font-semibold uppercase text-mist">
               For the kitchen
             </p>
             <p className="mt-3 max-w-3xl text-4xl font-bold leading-tight sm:text-5xl">
               Not another dashboard.
-              <span className="text-clay"> A family wall.</span>
+              <span className="text-mist"> A family wall.</span>
             </p>
           </div>
         </section>
 
         <section id="contact" className="mx-auto my-16 w-full max-w-6xl px-6">
-          <div className="relative overflow-hidden rounded-[2rem] bg-terracotta px-8 py-14 text-white sm:px-14">
+          <div className="relative overflow-hidden rounded-[2rem] bg-cta px-8 py-14 text-white sm:px-14">
             <div
               aria-hidden
-              className="absolute -right-10 -top-10 h-40 w-40 rounded-full bg-clay/40"
+              className="absolute -right-10 -top-10 h-40 w-40 rounded-full bg-mist/40"
             />
             <h2 className="relative text-4xl font-bold sm:text-5xl">
               Write to the studio.
@@ -169,7 +170,7 @@ export default function Home() {
             </p>
             <div className="relative mt-8 flex flex-wrap gap-3">
               <a
-                className="inline-flex rounded-full bg-card px-6 py-3 text-sm font-semibold text-foreground hover:bg-sand"
+                className="inline-flex rounded-full bg-card px-6 py-3 text-sm font-semibold text-foreground hover:bg-frost"
                 href="mailto:info@ashurose.com"
               >
                 info@ashurose.com
