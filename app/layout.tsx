@@ -15,10 +15,11 @@ export const metadata: Metadata = {
     template: "%s · AshurRose",
   },
   description:
-    "FamilyFlow, a touch-screen family wall calendar from AshurRose.",
+    "AshurRose is a software solutions company. FamilyFlow is a touch-screen family wall calendar.",
   openGraph: {
     title: "AshurRose",
-    description: "FamilyFlow, a touch-screen family wall calendar.",
+    description:
+      "AshurRose is a software solutions company. FamilyFlow is a touch-screen family wall calendar.",
     url: "https://ashurose.com",
     siteName: "AshurRose",
     type: "website",

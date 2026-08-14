@@ -37,7 +37,8 @@ export function SiteFooter() {
             <Image src={logo} alt="" className="h-7 w-auto" sizes="56px" />
           </span>
           <span className="text-sm text-muted">
-            © {new Date().getFullYear()} AshurRose
+            © {new Date().getFullYear()} AshurRose. A software solutions
+            company.
           </span>
         </Link>
         <a

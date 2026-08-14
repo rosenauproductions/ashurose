@@ -231,7 +231,7 @@ export default function Home() {
               className="absolute -right-10 -top-10 h-40 w-40 rounded-full bg-mist/40"
             />
             <h2 className="relative text-4xl font-bold sm:text-5xl">
-              Write to the studio.
+              Write to us.
             </h2>
             <p className="relative mt-4 max-w-lg text-lg text-white/85">
               FamilyFlow waitlist or product questions—we read every note.
