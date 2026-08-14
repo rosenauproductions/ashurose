@@ -1,5 +1,8 @@
 import Image from "next/image";
-import familyflow from "../public/familyflow.png";
+import familyflowAppearance from "../public/familyflow-appearance.png";
+import familyflowHousehold from "../public/familyflow-household.png";
+import familyflowSettings from "../public/familyflow-settings.png";
+import familyflowWall from "../public/familyflow-wall.png";
 import { SiteFooter, SiteHeader } from "./components/site-chrome";
 
 const weekdays = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
@@ -89,18 +92,18 @@ export default function Home() {
               <figure className="relative z-10 -rotate-2 overflow-hidden rounded-[2rem] border-[6px] border-card shadow-[0_30px_70px_rgba(28,36,48,0.16)] lg:ml-8 lg:mt-6">
                 <div className="relative aspect-[16/10] w-full">
                   <Image
-                    src={familyflow}
-                    alt="FamilyFlow touch-screen family calendar showing week view, chores, weather, and clock"
+                    src={familyflowWall}
+                    alt="FamilyFlow two-week wall calendar with chores, weather, and clock"
                     fill
                     priority
                     sizes="(max-width: 1024px) 100vw, 720px"
-                    className="object-cover object-[center_20%]"
+                    className="object-cover object-center"
                   />
                 </div>
               </figure>
               <p className="relative z-10 mt-8 ml-auto max-w-xs rotate-1 rounded-2xl bg-card px-4 py-3 text-sm leading-6 text-muted shadow-sm lg:mr-4">
-                Week view, chores, weather, and the clock—meant to live where
-                the family already gathers.
+                Two weeks at a glance—chores, weather, and the clock, on the
+                wall.
               </p>
             </div>
           </div>
@@ -119,6 +122,71 @@ export default function Home() {
             </span>
           ))}
         </div>
+
+        <section className="mx-auto w-full max-w-6xl px-6 py-16">
+          <p className="text-sm font-semibold uppercase text-sky">
+            On the wall, and in setup
+          </p>
+          <h2 className="mt-2 max-w-xl text-3xl font-bold sm:text-4xl">
+            How the household actually uses it.
+          </h2>
+          <div className="mt-8 grid gap-6 md:grid-cols-3">
+            <figure className="overflow-hidden rounded-[1.5rem] border border-line bg-card">
+              <div className="relative aspect-[4/3] w-full">
+                <Image
+                  src={familyflowAppearance}
+                  alt="FamilyFlow appearance options for calendar view, clock style, and light display"
+                  fill
+                  sizes="(max-width: 768px) 100vw, 360px"
+                  className="object-cover object-[center_72%]"
+                />
+              </div>
+              <figcaption className="p-5">
+                <p className="font-semibold">Look of the wall</p>
+                <p className="mt-1 text-sm leading-6 text-muted">
+                  Two-week view, flip clock, and light mode—set once for the
+                  kitchen display.
+                </p>
+              </figcaption>
+            </figure>
+            <figure className="overflow-hidden rounded-[1.5rem] border border-line bg-card">
+              <div className="relative aspect-[4/3] w-full">
+                <Image
+                  src={familyflowHousehold}
+                  alt="FamilyFlow household people and color assignments"
+                  fill
+                  sizes="(max-width: 768px) 100vw, 360px"
+                  className="object-cover object-[center_58%]"
+                />
+              </div>
+              <figcaption className="p-5">
+                <p className="font-semibold">People and colors</p>
+                <p className="mt-1 text-sm leading-6 text-muted">
+                  Give each person a color so the week is readable from across
+                  the room.
+                </p>
+              </figcaption>
+            </figure>
+            <figure className="overflow-hidden rounded-[1.5rem] border border-line bg-card">
+              <div className="relative aspect-[4/3] w-full">
+                <Image
+                  src={familyflowSettings}
+                  alt="FamilyFlow settings for RSS widgets and Google Calendar connections"
+                  fill
+                  sizes="(max-width: 768px) 100vw, 360px"
+                  className="object-cover object-[center_38%]"
+                />
+              </div>
+              <figcaption className="p-5">
+                <p className="font-semibold">Calendars on the glass</p>
+                <p className="mt-1 text-sm leading-6 text-muted">
+                  Choose which Google calendars appear on the wall, and add a
+                  verse or feed if you want one.
+                </p>
+              </figcaption>
+            </figure>
+          </div>
+        </section>
 
         <section id="familyflow" className="mx-auto w-full max-w-6xl px-6 py-20">
           <div className="flex flex-col gap-6 lg:flex-row lg:items-end lg:justify-between">

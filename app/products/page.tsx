@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
-import familyflow from "../../public/familyflow.png";
+import familyflowWall from "../../public/familyflow-wall.png";
 import { SiteFooter, SiteHeader } from "../components/site-chrome";
 
 export const metadata: Metadata = {
@@ -26,11 +26,11 @@ export default function ProductsPage() {
           <article className="flex flex-col overflow-hidden rounded-[2rem] border border-line bg-card">
             <div className="relative aspect-[16/10] w-full bg-frost">
               <Image
-                src={familyflow}
-                alt="FamilyFlow touch-screen family calendar showing week view, chores, weather, and clock"
+                src={familyflowWall}
+                alt="FamilyFlow two-week wall calendar with chores, weather, and clock"
                 fill
                 sizes="(max-width: 1024px) 100vw, 560px"
-                className="object-cover object-[center_20%]"
+                className="object-cover object-center"
               />
             </div>
             <div className="flex flex-1 flex-col p-8">
