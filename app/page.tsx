@@ -43,15 +43,15 @@ export default function Home() {
           />
           <div
             aria-hidden
-            className="absolute -left-24 top-10 h-72 w-72 rounded-full bg-mist/70 blur-2xl"
+            className="pointer-events-none absolute -left-24 top-10 h-72 w-72 rounded-full bg-mist/70 blur-2xl"
           />
           <div
             aria-hidden
-            className="absolute right-[8%] top-24 hidden h-40 w-40 rounded-[2rem] bg-sky/25 lg:block"
+            className="pointer-events-none absolute right-[8%] top-24 hidden h-40 w-40 rounded-[2rem] bg-sky/25 lg:block"
           />
 
           <div className="relative mx-auto grid w-full max-w-6xl items-start gap-10 px-6 lg:grid-cols-12 lg:gap-8">
-            <div className="lg:col-span-5 lg:pt-10">
+            <div className="relative z-10 lg:col-span-5 lg:pt-10">
               <p className="inline-flex rounded-full bg-sky-deep px-3 py-1 text-[11px] font-semibold uppercase text-card">
                 FamilyFlow · coming soon
               </p>
@@ -64,30 +64,41 @@ export default function Home() {
                 chores, lists, and weather—built for the kitchen, not another
                 phone.
               </p>
-              <div className="mt-8 flex flex-wrap gap-3">
-                <a
-                  className="inline-flex rounded-full bg-cta px-6 py-3 text-sm font-semibold text-white hover:opacity-90"
-                  href="mailto:info@ashurose.com"
-                >
-                  Join the waitlist
-                </a>
-                <a
-                  className="inline-flex rounded-full border border-line bg-card px-6 py-3 text-sm font-semibold hover:bg-frost"
-                  href="mailto:support@ashurose.com"
-                >
-                  support@ashurose.com
-                </a>
+              <div className="mt-8">
+                <div className="flex flex-wrap gap-3">
+                  <a
+                    className="inline-flex rounded-full bg-cta px-6 py-3 text-sm font-semibold text-white hover:opacity-90"
+                    href="mailto:info@ashurose.com?subject=FamilyFlow%20waitlist"
+                  >
+                    Join the waitlist
+                  </a>
+                  <a
+                    className="inline-flex rounded-full border border-line bg-card px-6 py-3 text-sm font-semibold hover:bg-frost"
+                    href="mailto:support@ashurose.com"
+                  >
+                    support@ashurose.com
+                  </a>
+                </div>
+                <p className="mt-3 text-sm text-muted">
+                  Waitlist:{" "}
+                  <a
+                    className="font-semibold text-foreground underline decoration-cta decoration-2 underline-offset-4 hover:text-cta"
+                    href="mailto:info@ashurose.com?subject=FamilyFlow%20waitlist"
+                  >
+                    info@ashurose.com
+                  </a>
+                </p>
               </div>
             </div>
 
-            <div className="relative lg:col-span-7 lg:min-h-[28rem]">
+            <div className="relative z-0 lg:col-span-7 lg:min-h-[28rem]">
               <div
                 aria-hidden
-                className="absolute -bottom-6 left-6 right-16 top-16 rounded-[2.5rem] bg-sky-deep lg:left-10"
+                className="pointer-events-none absolute -bottom-6 left-6 right-16 top-16 rounded-[2.5rem] bg-sky-deep lg:left-10"
               />
               <div
                 aria-hidden
-                className="absolute -right-4 top-0 h-28 w-28 rounded-full bg-cta/80 lg:right-2"
+                className="pointer-events-none absolute -right-4 top-0 h-28 w-28 rounded-full bg-cta/80 lg:right-2"
               />
               <figure className="relative z-10 -rotate-2 overflow-hidden rounded-[2rem] border-[6px] border-card shadow-[0_30px_70px_rgba(28,36,48,0.16)] lg:ml-8 lg:mt-6">
                 <div className="relative aspect-[16/10] w-full">
@@ -228,7 +239,7 @@ export default function Home() {
           <div className="relative overflow-hidden rounded-[2rem] bg-cta px-8 py-14 text-white sm:px-14">
             <div
               aria-hidden
-              className="absolute -right-10 -top-10 h-40 w-40 rounded-full bg-mist/40"
+              className="pointer-events-none absolute -right-10 -top-10 h-40 w-40 rounded-full bg-mist/40"
             />
             <h2 className="relative text-4xl font-bold sm:text-5xl">
               Write to us.
@@ -239,7 +250,7 @@ export default function Home() {
             <div className="relative mt-8 flex flex-wrap gap-3">
               <a
                 className="inline-flex rounded-full bg-card px-6 py-3 text-sm font-semibold text-foreground hover:bg-frost"
-                href="mailto:info@ashurose.com"
+                href="mailto:info@ashurose.com?subject=FamilyFlow%20waitlist"
               >
                 info@ashurose.com
               </a>
