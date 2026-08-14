@@ -16,6 +16,13 @@ export const metadata: Metadata = {
   },
   description:
     "AshurRose is a software solutions company. FamilyFlow is a touch-screen family wall calendar.",
+  icons: {
+    icon: [
+      { url: "/favicon.ico", sizes: "any" },
+      { url: "/icon.png", type: "image/png", sizes: "192x192" },
+    ],
+    apple: "/icon.png",
+  },
   openGraph: {
     title: "AshurRose",
     description:
