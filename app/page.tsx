@@ -1,5 +1,6 @@
 import Image from "next/image";
 import familyflow from "../public/familyflow.png";
+import { SiteFooter, SiteHeader } from "./components/site-chrome";
 
 const weekdays = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
 
@@ -29,29 +30,9 @@ const benefits = [
 export default function Home() {
   return (
     <div className="flex flex-1 flex-col">
-      <header className="relative z-20 mx-auto flex w-full max-w-6xl items-end justify-between px-6 pt-8 pb-4">
-        <a href="#top" className="leading-none">
-          <span className="block text-[11px] font-semibold uppercase text-sage">
-            Studio
-          </span>
-          <span className="mt-1 block text-3xl font-bold tracking-normal">
-            AshurRose
-          </span>
-        </a>
-        <nav className="hidden gap-7 text-sm font-medium text-muted sm:flex">
-          <a className="hover:text-foreground" href="#familyflow">
-            FamilyFlow
-          </a>
-          <a className="hover:text-foreground" href="#hinterviewer">
-            Hinterviewer
-          </a>
-          <a className="hover:text-foreground" href="#contact">
-            Contact
-          </a>
-        </nav>
-      </header>
+      <SiteHeader />
 
-      <main id="top" className="flex flex-1 flex-col">
+      <main className="flex flex-1 flex-col">
         <section className="relative overflow-hidden pb-8 pt-4">
           <div
             aria-hidden
@@ -76,9 +57,9 @@ export default function Home() {
                 <span className="mt-1 block text-terracotta">on the wall.</span>
               </h1>
               <p className="mt-6 max-w-md text-lg leading-8 text-muted">
-                FamilyFlow is the AshurRose touch-screen family calendar.
-                Shared schedules, chores, lists, and weather—built for the
-                kitchen, not another phone.
+                FamilyFlow is a touch-screen family calendar. Shared schedules,
+                chores, lists, and weather—built for the kitchen, not another
+                phone.
               </p>
               <div className="mt-8 flex flex-wrap gap-3">
                 <a
@@ -174,37 +155,7 @@ export default function Home() {
           </div>
         </section>
 
-        <section
-          id="hinterviewer"
-          className="mx-auto grid w-full max-w-6xl gap-8 px-6 py-20 lg:grid-cols-12"
-        >
-          <div className="flex items-end lg:col-span-4">
-            <p className="text-[6rem] font-bold leading-none text-sand">HV</p>
-          </div>
-          <div className="lg:col-span-8 lg:pt-8">
-            <p className="text-sm font-semibold uppercase text-sage">
-              Also from AshurRose
-            </p>
-            <h2 className="mt-2 text-4xl font-bold">Hinterviewer</h2>
-            <p className="mt-4 max-w-lg text-lg leading-8 text-muted">
-              Video resumes for trade schools. Students show hands-on skill;
-              employers see what a paper résumé cannot.
-            </p>
-            <a
-              className="mt-6 inline-flex font-semibold underline decoration-terracotta decoration-2 underline-offset-4 hover:text-terracotta"
-              href="https://hinterviewer.com/"
-              rel="noopener noreferrer"
-              target="_blank"
-            >
-              hinterviewer.com
-            </a>
-          </div>
-        </section>
-
-        <section
-          id="contact"
-          className="mx-auto mb-16 w-full max-w-6xl px-6"
-        >
+        <section id="contact" className="mx-auto my-16 w-full max-w-6xl px-6">
           <div className="relative overflow-hidden rounded-[2rem] bg-terracotta px-8 py-14 text-white sm:px-14">
             <div
               aria-hidden
@@ -214,30 +165,27 @@ export default function Home() {
               Write to the studio.
             </h2>
             <p className="relative mt-4 max-w-lg text-lg text-white/85">
-              Waitlist, FamilyFlow questions, or anything else—aliases only,
-              we read them.
+              FamilyFlow waitlist or product questions—we read every note.
             </p>
-            <a
-              className="relative mt-8 inline-flex rounded-full bg-card px-6 py-3 text-sm font-semibold text-foreground hover:bg-sand"
-              href="mailto:info@ashurose.com"
-            >
-              info@ashurose.com
-            </a>
+            <div className="relative mt-8 flex flex-wrap gap-3">
+              <a
+                className="inline-flex rounded-full bg-card px-6 py-3 text-sm font-semibold text-foreground hover:bg-sand"
+                href="mailto:info@ashurose.com"
+              >
+                info@ashurose.com
+              </a>
+              <a
+                className="inline-flex rounded-full border border-white/30 px-6 py-3 text-sm font-semibold text-white hover:bg-white/10"
+                href="mailto:support@ashurose.com"
+              >
+                support@ashurose.com
+              </a>
+            </div>
           </div>
         </section>
       </main>
 
-      <footer className="border-t border-line">
-        <div className="mx-auto flex w-full max-w-6xl flex-col gap-2 px-6 py-8 text-sm text-muted sm:flex-row sm:items-baseline sm:justify-between">
-          <p>© {new Date().getFullYear()} AshurRose</p>
-          <a
-            className="hover:text-foreground"
-            href="mailto:admin@ashurose.com"
-          >
-            admin@ashurose.com
-          </a>
-        </div>
-      </footer>
+      <SiteFooter />
     </div>
   );
 }
