@@ -15,7 +15,7 @@ export const metadata: Metadata = {
     template: "%s · AshurRose",
   },
   description:
-    "AshurRose is a software solutions company. FamilyFlow is a touch-screen family wall calendar.",
+    "FamilyFlow is the calendar you don’t have to remember to check. A touch-screen family wall from AshurRose.",
   icons: {
     icon: [
       { url: "/favicon.ico", sizes: "any" },
@@ -26,7 +26,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "AshurRose",
     description:
-      "AshurRose is a software solutions company. FamilyFlow is a touch-screen family wall calendar.",
+      "FamilyFlow is the calendar you don’t have to remember to check. A touch-screen family wall from AshurRose.",
     url: "https://ashurose.com",
     siteName: "AshurRose",
     type: "website",

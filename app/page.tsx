@@ -10,25 +10,66 @@ const weekdays = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
 const benefits = [
   {
     n: "01",
-    title: "The week, full size",
-    body: "Google Calendar synced live. Day, week, or month views large enough to read from across the kitchen. Multi-person colors, touch navigation, and add/edit right on the glass.",
+    title: "Everyone’s schedule",
+    body: "Google Calendar synced live. Multiple people, each with a color. Day, week, or month views—large enough to read from across the room.",
   },
   {
     n: "02",
-    title: "Chores that actually get done",
-    body: "Assign by person, check off on the wall, celebrate when the list is clear. No extra app in anyone’s pocket—just fingers on glass.",
+    title: "Chores that actually get seen",
+    body: "Assigned chores right where everyone can see them, and check them off on the wall.",
   },
   {
     n: "03",
-    title: "Built for the wall, not the phone",
-    body: "Kiosk mode, big touch targets, sleep schedule, and a display that feels at home in the kitchen. Designed first for standing and glancing, not scrolling.",
+    title: "Everything else the family needs",
+    body: "Lists, weather, the clock, feeds—together on the same wall as the week.",
   },
   {
     n: "04",
-    title: "One calm household view",
-    body: "Calendar, chores, lists, and the week’s weather—together in a single, shared space everyone can use.",
+    title: "Made for the wall",
+    body: "Kiosk mode, large touch targets, a sleep schedule, and a kitchen-friendly display. Built for standing and glancing, not scrolling.",
   },
 ];
+
+function WaitlistCta({ variant }: { variant: "light" | "on-cta" }) {
+  const primary =
+    variant === "light"
+      ? "inline-flex rounded-full bg-cta px-6 py-3 text-sm font-semibold text-white hover:opacity-90"
+      : "inline-flex rounded-full bg-card px-6 py-3 text-sm font-semibold text-foreground hover:bg-frost";
+  const secondary =
+    variant === "light"
+      ? "inline-flex rounded-full border border-line bg-card px-6 py-3 text-sm font-semibold hover:bg-frost"
+      : "inline-flex rounded-full border border-white/30 px-6 py-3 text-sm font-semibold text-white hover:bg-white/10";
+  const note = variant === "light" ? "text-muted" : "text-white/85";
+  const mail =
+    variant === "light"
+      ? "font-semibold text-foreground underline decoration-cta decoration-2 underline-offset-4 hover:text-cta"
+      : "font-semibold text-white underline decoration-mist decoration-2 underline-offset-4 hover:text-mist";
+
+  return (
+    <div>
+      <div className="flex flex-wrap gap-3">
+        <a
+          className={primary}
+          href="mailto:info@ashurose.com?subject=FamilyFlow%20waitlist"
+        >
+          Join the waitlist
+        </a>
+        <a className={secondary} href="mailto:support@ashurose.com">
+          support@ashurose.com
+        </a>
+      </div>
+      <p className={`mt-3 text-sm ${note}`}>
+        Waitlist:{" "}
+        <a
+          className={mail}
+          href="mailto:info@ashurose.com?subject=FamilyFlow%20waitlist"
+        >
+          info@ashurose.com
+        </a>
+      </p>
+    </div>
+  );
+}
 
 export default function Home() {
   return (
@@ -36,7 +77,7 @@ export default function Home() {
       <SiteHeader />
 
       <main className="flex flex-1 flex-col">
-        <section className="relative overflow-hidden pb-8 pt-4">
+        <section className="relative overflow-hidden pb-10 pt-4">
           <div
             aria-hidden
             className="wall-grid pointer-events-none absolute inset-0 opacity-80"
@@ -50,72 +91,53 @@ export default function Home() {
             className="pointer-events-none absolute right-[8%] top-24 hidden h-40 w-40 rounded-[2rem] bg-sky/25 lg:block"
           />
 
-          <div className="relative mx-auto grid w-full max-w-6xl items-start gap-10 px-6 lg:grid-cols-12 lg:gap-8">
-            <div className="relative z-10 lg:col-span-5 lg:pt-10">
-              <p className="inline-flex rounded-full bg-sky-deep px-3 py-1 text-[11px] font-semibold uppercase text-card">
-                FamilyFlow · coming soon
-              </p>
-              <h1 className="mt-6 text-5xl font-bold leading-[1.08] sm:text-6xl lg:text-[4.4rem]">
-                Hang the week
-                <span className="mt-1 block text-cta">on the wall.</span>
-              </h1>
-              <p className="mt-6 max-w-md text-lg leading-8 text-muted">
-                FamilyFlow is a touch-screen family calendar. Shared schedules,
-                chores, lists, and weather—built for the kitchen, not another
-                phone.
-              </p>
-              <div className="mt-8">
-                <div className="flex flex-wrap gap-3">
-                  <a
-                    className="inline-flex rounded-full bg-cta px-6 py-3 text-sm font-semibold text-white hover:opacity-90"
-                    href="mailto:info@ashurose.com?subject=FamilyFlow%20waitlist"
-                  >
-                    Join the waitlist
-                  </a>
-                  <a
-                    className="inline-flex rounded-full border border-line bg-card px-6 py-3 text-sm font-semibold hover:bg-frost"
-                    href="mailto:support@ashurose.com"
-                  >
-                    support@ashurose.com
-                  </a>
-                </div>
-                <p className="mt-3 text-sm text-muted">
-                  Waitlist:{" "}
-                  <a
-                    className="font-semibold text-foreground underline decoration-cta decoration-2 underline-offset-4 hover:text-cta"
-                    href="mailto:info@ashurose.com?subject=FamilyFlow%20waitlist"
-                  >
-                    info@ashurose.com
-                  </a>
-                </p>
-              </div>
-            </div>
+          <div className="relative mx-auto w-full max-w-6xl px-6">
+            <p className="inline-flex rounded-full bg-sky-deep px-3 py-1 text-[11px] font-semibold uppercase text-card">
+              FamilyFlow · coming soon
+            </p>
+            <h1 className="mt-6 max-w-3xl text-5xl font-bold leading-[1.08] sm:text-6xl lg:text-[4.6rem]">
+              Your family.{" "}
+              <span className="text-cta">At a glance.</span>
+            </h1>
+            <p className="mt-4 text-xl font-medium text-sky-deep sm:text-2xl">
+              Hang the week on the wall.
+            </p>
+          </div>
 
-            <div className="relative z-0 lg:col-span-7 lg:min-h-[28rem]">
+          <div className="relative mx-auto mt-10 w-full max-w-6xl px-6">
+            <div className="relative">
               <div
                 aria-hidden
-                className="pointer-events-none absolute -bottom-6 left-6 right-16 top-16 rounded-[2.5rem] bg-sky-deep lg:left-10"
+                className="pointer-events-none absolute -bottom-5 left-8 right-10 top-10 rounded-[2.5rem] bg-sky-deep"
               />
               <div
                 aria-hidden
-                className="pointer-events-none absolute -right-4 top-0 h-28 w-28 rounded-full bg-cta/80 lg:right-2"
+                className="pointer-events-none absolute -right-3 top-2 h-24 w-24 rounded-full bg-cta/80 sm:h-28 sm:w-28"
               />
-              <figure className="relative z-10 -rotate-2 overflow-hidden rounded-[2rem] border-[6px] border-card shadow-[0_30px_70px_rgba(28,36,48,0.16)] lg:ml-8 lg:mt-6">
+              <figure className="relative z-10 overflow-hidden rounded-[2rem] border-[6px] border-card shadow-[0_30px_70px_rgba(28,36,48,0.16)]">
                 <div className="relative aspect-[16/10] w-full">
                   <Image
                     src={familyflowWall}
-                    alt="FamilyFlow two-week wall calendar with chores, weather, and clock"
+                    alt="FamilyFlow two-week wall calendar showing everyone’s schedule, chores, weather, and the time"
                     fill
                     priority
-                    sizes="(max-width: 1024px) 100vw, 720px"
+                    sizes="(max-width: 1152px) 100vw, 1152px"
                     className="object-cover object-center"
                   />
                 </div>
               </figure>
-              <p className="relative z-10 mt-8 ml-auto max-w-xs rotate-1 rounded-2xl bg-card px-4 py-3 text-sm leading-6 text-muted shadow-sm lg:mr-4">
-                Two weeks at a glance—chores, weather, and the clock, on the
-                wall.
-              </p>
+            </div>
+            <p className="relative z-10 mt-8 max-w-3xl text-xl font-semibold leading-8 sm:text-2xl sm:leading-9">
+              Two weeks. Everyone’s schedule. Chores. Weather. The time. All
+              visible from across the room.
+            </p>
+            <p className="mt-4 max-w-2xl text-lg leading-8 text-muted">
+              A touch-screen family wall that brings schedules, chores, lists,
+              and weather together—so everyone knows what’s happening without
+              checking another phone.
+            </p>
+            <div className="mt-8">
+              <WaitlistCta variant="light" />
             </div>
           </div>
         </section>
@@ -134,47 +156,69 @@ export default function Home() {
           ))}
         </div>
 
-        <section className="mx-auto w-full max-w-6xl px-6 py-16">
-          <p className="text-sm font-semibold uppercase text-sky">
-            On the wall, and in setup
+        <section className="relative overflow-hidden bg-sky-deep py-16 text-card sm:py-20">
+          <p className="pointer-events-none absolute -bottom-8 left-0 text-[16vw] font-bold leading-none text-white/5">
+            WALL
           </p>
-          <h2 className="mt-2 max-w-xl text-3xl font-bold sm:text-4xl">
-            How the household actually uses it.
+          <div className="relative mx-auto max-w-6xl px-6">
+            <p className="text-sm font-semibold uppercase text-mist">
+              Visible without asking
+            </p>
+            <h2 className="mt-3 max-w-4xl text-4xl font-bold leading-tight sm:text-5xl">
+              The calendar you don’t have to remember to check.
+            </h2>
+            <p className="mt-5 max-w-2xl text-lg leading-8 text-mist">
+              FamilyFlow lives on the wall, so the family schedule is always
+              there—visible to everyone, all day.
+            </p>
+            <p className="mt-8 max-w-xl text-xl font-semibold leading-8">
+              The family doesn’t have to remember to check it.
+            </p>
+            <div className="mt-8 grid gap-4 sm:grid-cols-2">
+              <p className="rounded-2xl bg-white/10 px-5 py-4 leading-7">
+                <span className="block text-sm font-semibold uppercase text-mist">
+                  Phone calendar
+                </span>
+                Remember → pick up the phone → open the app → look.
+              </p>
+              <p className="rounded-2xl bg-card px-5 py-4 font-medium leading-7 text-foreground">
+                <span className="block text-sm font-semibold uppercase text-sky">
+                  FamilyFlow
+                </span>
+                Walk into the kitchen → see it.
+              </p>
+            </div>
+          </div>
+        </section>
+
+        <section className="mx-auto w-full max-w-6xl px-6 py-20">
+          <p className="text-sm font-semibold uppercase text-sky">
+            Already on Google Calendar
+          </p>
+          <h2 className="mt-2 max-w-3xl text-4xl font-bold leading-tight sm:text-5xl">
+            Your calendars. Finally on the wall.
           </h2>
-          <div className="mt-8 grid gap-6 md:grid-cols-3">
-            <figure className="overflow-hidden rounded-[1.5rem] border border-line bg-card">
-              <div className="relative aspect-[4/3] w-full">
-                <Image
-                  src={familyflowAppearance}
-                  alt="FamilyFlow appearance options for calendar view, clock style, and light display"
-                  fill
-                  sizes="(max-width: 768px) 100vw, 360px"
-                  className="object-cover object-[center_72%]"
-                />
-              </div>
-              <figcaption className="p-5">
-                <p className="font-semibold">Look of the wall</p>
-                <p className="mt-1 text-sm leading-6 text-muted">
-                  Two-week view, flip clock, and light mode—set once for the
-                  kitchen display.
-                </p>
-              </figcaption>
-            </figure>
+          <p className="mt-5 max-w-2xl text-lg leading-8 text-muted">
+            FamilyFlow connects to the calendars your family already uses. Give
+            everyone a color, choose which calendars appear, and see the whole
+            household’s week in one place.
+          </p>
+          <div className="mt-10 grid gap-6 md:grid-cols-2">
             <figure className="overflow-hidden rounded-[1.5rem] border border-line bg-card">
               <div className="relative aspect-[4/3] w-full">
                 <Image
                   src={familyflowHousehold}
                   alt="FamilyFlow household people and color assignments"
                   fill
-                  sizes="(max-width: 768px) 100vw, 360px"
+                  sizes="(max-width: 768px) 100vw, 560px"
                   className="object-cover object-[center_58%]"
                 />
               </div>
               <figcaption className="p-5">
-                <p className="font-semibold">People and colors</p>
+                <p className="font-semibold">Give everyone a color</p>
                 <p className="mt-1 text-sm leading-6 text-muted">
-                  Give each person a color so the week is readable from across
-                  the room.
+                  The week is readable from across the room because each person
+                  is already on the wall.
                 </p>
               </figcaption>
             </figure>
@@ -182,33 +226,30 @@ export default function Home() {
               <div className="relative aspect-[4/3] w-full">
                 <Image
                   src={familyflowSettings}
-                  alt="FamilyFlow settings for RSS widgets and Google Calendar connections"
+                  alt="FamilyFlow settings for Google Calendar connections"
                   fill
-                  sizes="(max-width: 768px) 100vw, 360px"
+                  sizes="(max-width: 768px) 100vw, 560px"
                   className="object-cover object-[center_38%]"
                 />
               </div>
               <figcaption className="p-5">
-                <p className="font-semibold">Calendars on the glass</p>
+                <p className="font-semibold">Choose which calendars appear</p>
                 <p className="mt-1 text-sm leading-6 text-muted">
-                  Choose which Google calendars appear on the wall, and add a
-                  verse or feed if you want one.
+                  You are not starting a new calendar. You are putting the ones
+                  you already keep onto the glass.
                 </p>
               </figcaption>
             </figure>
           </div>
         </section>
 
-        <section id="familyflow" className="mx-auto w-full max-w-6xl px-6 py-20">
-          <div className="flex flex-col gap-6 lg:flex-row lg:items-end lg:justify-between">
-            <h2 className="max-w-xl text-4xl font-bold leading-tight sm:text-5xl">
-              Four things every household should stop hunting for.
-            </h2>
-            <p className="max-w-sm text-muted">
-              FamilyFlow puts the week on the wall—where everyone can see it and
-              touch it.
-            </p>
-          </div>
+        <section id="familyflow" className="mx-auto w-full max-w-6xl px-6 pb-20">
+          <p className="text-sm font-semibold uppercase text-sky">
+            On the wall
+          </p>
+          <h2 className="mt-2 max-w-xl text-4xl font-bold leading-tight sm:text-5xl">
+            The week, then the household, then the glass.
+          </h2>
           <div className="mt-12 grid gap-px overflow-hidden rounded-3xl border border-line bg-line sm:grid-cols-2">
             {benefits.map((item) => (
               <article key={item.n} className="bg-card p-8 sm:p-10">
@@ -218,24 +259,27 @@ export default function Home() {
               </article>
             ))}
           </div>
+          <figure className="mt-10 overflow-hidden rounded-[1.5rem] border border-line bg-card md:max-w-xl">
+            <div className="relative aspect-[16/10] w-full">
+              <Image
+                src={familyflowAppearance}
+                alt="FamilyFlow appearance options for calendar view, clock style, and light display"
+                fill
+                sizes="(max-width: 768px) 100vw, 576px"
+                className="object-cover object-[center_72%]"
+              />
+            </div>
+            <figcaption className="p-5">
+              <p className="font-semibold">Made for the wall</p>
+              <p className="mt-1 text-sm leading-6 text-muted">
+                Two-week view, flip clock, and light mode—set once for a kitchen
+                display, not another iPad home screen.
+              </p>
+            </figcaption>
+          </figure>
         </section>
 
-        <section className="relative overflow-hidden bg-sky-deep py-16 text-card">
-          <p className="pointer-events-none absolute -bottom-8 left-0 text-[18vw] font-bold leading-none text-white/5">
-            WALL
-          </p>
-          <div className="relative mx-auto max-w-6xl px-6">
-            <p className="text-sm font-semibold uppercase text-mist">
-              For the kitchen
-            </p>
-            <p className="mt-3 max-w-3xl text-4xl font-bold leading-tight sm:text-5xl">
-              Not another dashboard.
-              <span className="text-mist"> A family wall.</span>
-            </p>
-          </div>
-        </section>
-
-        <section id="contact" className="mx-auto my-16 w-full max-w-6xl px-6">
+        <section id="contact" className="mx-auto mb-16 w-full max-w-6xl px-6">
           <div className="relative overflow-hidden rounded-[2rem] bg-cta px-8 py-14 text-white sm:px-14">
             <div
               aria-hidden
@@ -247,19 +291,8 @@ export default function Home() {
             <p className="relative mt-4 max-w-lg text-lg text-white/85">
               FamilyFlow waitlist or product questions—we read every note.
             </p>
-            <div className="relative mt-8 flex flex-wrap gap-3">
-              <a
-                className="inline-flex rounded-full bg-card px-6 py-3 text-sm font-semibold text-foreground hover:bg-frost"
-                href="mailto:info@ashurose.com?subject=FamilyFlow%20waitlist"
-              >
-                info@ashurose.com
-              </a>
-              <a
-                className="inline-flex rounded-full border border-white/30 px-6 py-3 text-sm font-semibold text-white hover:bg-white/10"
-                href="mailto:support@ashurose.com"
-              >
-                support@ashurose.com
-              </a>
+            <div className="relative mt-8">
+              <WaitlistCta variant="on-cta" />
             </div>
           </div>
         </section>
