@@ -15,7 +15,7 @@ export const metadata: Metadata = {
     template: "%s · AshurRose",
   },
   description:
-    "FamilyFlow is the calendar you don’t have to remember to check. A touch-screen family wall from AshurRose.",
+    "FamilyFlow helps families organize kids’ chores and reward them on a shared wall. From AshurRose.",
   icons: {
     icon: [
       { url: "/favicon.ico", sizes: "any" },
@@ -26,7 +26,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "AshurRose",
     description:
-      "FamilyFlow is the calendar you don’t have to remember to check. A touch-screen family wall from AshurRose.",
+      "FamilyFlow helps families organize kids’ chores and reward them on a shared wall. From AshurRose.",
     url: "https://ashurose.com",
     siteName: "AshurRose",
     type: "website",

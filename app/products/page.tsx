@@ -7,7 +7,7 @@ import { SiteFooter, SiteHeader } from "../components/site-chrome";
 export const metadata: Metadata = {
   title: "Products",
   description:
-    "AshurRose is a software solutions company. Products: FamilyFlow, a touch-screen family wall calendar, and Hinterviewer, video resumes for trade schools.",
+    "AshurRose is a software solutions company. Products: FamilyFlow, chores and rewards for kids on a shared wall, and Hinterviewer, video resumes for trade schools.",
 };
 
 export default function ProductsPage() {
@@ -28,7 +28,7 @@ export default function ProductsPage() {
             <div className="relative aspect-[16/10] w-full bg-frost">
               <Image
                 src={familyflowWall}
-                alt="FamilyFlow two-week wall calendar with chores, weather, and clock"
+                alt="FamilyFlow wall showing kids’ chores beside the week’s schedule"
                 fill
                 sizes="(max-width: 1024px) 100vw, 560px"
                 className="object-cover object-center"
@@ -40,8 +40,9 @@ export default function ProductsPage() {
               </p>
               <h2 className="mt-2 text-3xl font-bold">FamilyFlow</h2>
               <p className="mt-3 flex-1 leading-7 text-muted">
-                A touch-screen family wall calendar. Shared schedules, chores,
-                lists, and weather—built for the kitchen, not a phone.
+                FamilyFlow helps families organize kids’ chores and reward them
+                when the work is done—on a shared wall everyone can see. The week
+                hangs right beside it.
               </p>
               <div className="mt-6 flex flex-wrap gap-4 text-sm font-semibold">
                 <Link
