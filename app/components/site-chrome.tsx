@@ -14,7 +14,10 @@ export function SiteHeader() {
         />
       </Link>
       <nav className="flex items-center gap-5 text-sm font-medium text-muted sm:gap-7">
-        <Link className="hover:text-foreground" href="/#familyflow">
+        <Link className="hover:text-foreground" href="/">
+          Home
+        </Link>
+        <Link className="hover:text-foreground" href="/familyflow">
           FamilyFlow
         </Link>
         <Link className="hover:text-foreground" href="/products">

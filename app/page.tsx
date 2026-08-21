@@ -1,75 +1,46 @@
 import Image from "next/image";
+import Link from "next/link";
 import familyflowAppearance from "../public/familyflow-appearance.png";
 import familyflowHousehold from "../public/familyflow-household.png";
 import familyflowSettings from "../public/familyflow-settings.png";
 import familyflowWall from "../public/familyflow-wall.png";
 import { SiteFooter, SiteHeader } from "./components/site-chrome";
+import { WaitlistCta } from "./components/waitlist-cta";
 
 const weekdays = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
 
 const benefits = [
   {
     n: "01",
-    title: "Chores and rewards",
-    body: "Assign chores by person, check them off on the wall, and celebrate when the list is clear. Rewards sit where the kids already look.",
+    title: "Check it off on the glass",
+    body: "Assign chores by kid and due day. They tap the wall to mark it done—no hunting through a phone.",
   },
   {
     n: "02",
-    title: "Everyone’s schedule",
-    body: "Google Calendar synced live. Multiple people, each with a color. Day, week, or month views—large enough to read from across the room.",
+    title: "A reward when the list is clear",
+    body: "Confetti, a party hat, a glow—and a parent-written prize they can actually see, on the same wall.",
   },
   {
     n: "03",
-    title: "Everything else the family needs",
-    body: "Lists, weather, the clock, feeds—together on the same wall as the chores and the week.",
+    title: "A color for every kid",
+    body: "Chores and calendars share a person color, so the kitchen can tell whose work and whose practice from across the room.",
   },
   {
     n: "04",
-    title: "Made for the wall",
-    body: "Kiosk mode, large touch targets, a sleep schedule, and a kitchen-friendly display. Built for standing and glancing, not scrolling.",
+    title: "Calendars you already keep",
+    body: "Google Calendar synced live. Pick which calendars appear. Day, week, two-week, month, or agenda—large enough to read standing up.",
+  },
+  {
+    n: "05",
+    title: "Lists, weather, and the clock",
+    body: "Shared lists, household weather, a flip clock, and an optional feed—on the same glass as the chores.",
+  },
+  {
+    n: "06",
+    title: "Hung up, not pocketed",
+    body: "Kiosk mode, big touch targets, and a sleep schedule. On a phone it becomes a stacked list, with optional pings when chores finish.",
   },
 ];
-
-function WaitlistCta({ variant }: { variant: "light" | "on-cta" }) {
-  const primary =
-    variant === "light"
-      ? "inline-flex rounded-full bg-cta px-6 py-3 text-sm font-semibold text-white hover:opacity-90"
-      : "inline-flex rounded-full bg-card px-6 py-3 text-sm font-semibold text-foreground hover:bg-frost";
-  const secondary =
-    variant === "light"
-      ? "inline-flex rounded-full border border-line bg-card px-6 py-3 text-sm font-semibold hover:bg-frost"
-      : "inline-flex rounded-full border border-white/30 px-6 py-3 text-sm font-semibold text-white hover:bg-white/10";
-  const note = variant === "light" ? "text-muted" : "text-white/85";
-  const mail =
-    variant === "light"
-      ? "font-semibold text-foreground underline decoration-cta decoration-2 underline-offset-4 hover:text-cta"
-      : "font-semibold text-white underline decoration-mist decoration-2 underline-offset-4 hover:text-mist";
-
-  return (
-    <div>
-      <div className="flex flex-wrap gap-3">
-        <a
-          className={primary}
-          href="mailto:info@ashurose.com?subject=FamilyFlow%20waitlist"
-        >
-          Join the waitlist
-        </a>
-        <a className={secondary} href="mailto:support@ashurose.com">
-          support@ashurose.com
-        </a>
-      </div>
-      <p className={`mt-3 text-sm ${note}`}>
-        Waitlist:{" "}
-        <a
-          className={mail}
-          href="mailto:info@ashurose.com?subject=FamilyFlow%20waitlist"
-        >
-          info@ashurose.com
-        </a>
-      </p>
-    </div>
-  );
-}
 
 export default function Home() {
   return (
@@ -137,6 +108,14 @@ export default function Home() {
             </p>
             <div className="mt-8">
               <WaitlistCta variant="light" />
+              <p className="mt-4">
+                <Link
+                  className="text-sm font-semibold text-cta underline decoration-cta decoration-2 underline-offset-4 hover:opacity-80"
+                  href="/familyflow"
+                >
+                  See how FamilyFlow works
+                </Link>
+              </p>
             </div>
           </div>
         </section>
@@ -193,7 +172,7 @@ export default function Home() {
             On the wall
           </p>
           <h2 className="mt-2 max-w-xl text-4xl font-bold leading-tight sm:text-5xl">
-            Chores first. Then the week. Then the glass.
+            What the wall actually does.
           </h2>
           <figure className="mt-10 overflow-hidden rounded-[1.5rem] border border-line bg-card md:max-w-xl">
             <div className="relative aspect-[4/3] w-full">
@@ -222,6 +201,14 @@ export default function Home() {
               </article>
             ))}
           </div>
+          <p className="mt-8">
+            <Link
+              className="text-sm font-semibold text-cta underline decoration-cta decoration-2 underline-offset-4 hover:opacity-80"
+              href="/familyflow"
+            >
+              See how FamilyFlow works
+            </Link>
+          </p>
         </section>
 
         <section className="mx-auto w-full max-w-6xl px-6 pb-20">

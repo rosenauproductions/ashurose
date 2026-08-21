@@ -47,7 +47,7 @@ export default function ProductsPage() {
               <div className="mt-6 flex flex-wrap gap-4 text-sm font-semibold">
                 <Link
                   className="underline decoration-cta decoration-2 underline-offset-4 hover:text-cta"
-                  href="/"
+                  href="/familyflow"
                 >
                   View FamilyFlow
                 </Link>
