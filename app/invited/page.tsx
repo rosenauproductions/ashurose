@@ -15,7 +15,6 @@ export const metadata: Metadata = {
 };
 
 const APP_URL = "https://familyflow.ashurose.com/login";
-const SUPPORT = "mailto:support@ashurose.com?subject=FamilyFlow%20feedback";
 
 function Step({ n, title, body }: { n: number; title: string; body: React.ReactNode }) {
   return (
@@ -259,26 +258,19 @@ export default function InvitedPage() {
 
             <div>
               <p className="text-sm font-semibold uppercase text-sky">Sending feedback</p>
-              <h2 className="mt-2 text-4xl font-bold leading-tight">Two easy ways.</h2>
+              <h2 className="mt-2 text-4xl font-bold leading-tight">Right inside the app.</h2>
               <div className="mt-8 space-y-5">
-                <Card kicker="Best" title="Help & feedback in the app">
+                <Card kicker="One place for everything" title="Settings → Help & feedback">
                   <p>
-                    Go to <strong className="text-foreground">Settings → Help &amp; feedback</strong>{" "}
-                    and pick bug, idea, or question. It sends along which
-                    device you’re on, so you don’t have to explain your setup,
-                    and our replies show up right there.
+                    Every bug, idea, and wish-list item goes through{" "}
+                    <strong className="text-foreground">Settings → Help &amp; feedback</strong>{" "}
+                    in FamilyFlow. Pick bug, idea, or question and tell us what’s
+                    on your mind.
                   </p>
-                </Card>
-                <Card kicker="Anytime" title="Email us">
                   <p>
-                    Write to{" "}
-                    <a
-                      className="font-semibold text-foreground underline decoration-cta decoration-2 underline-offset-4 hover:text-cta"
-                      href={SUPPORT}
-                    >
-                      support@ashurose.com
-                    </a>
-                    . Screenshots and photos of the wall are always welcome.
+                    It sends along which device you’re on, so you don’t have to
+                    explain your setup — and our replies show up right there, so
+                    the whole conversation stays in one place.
                   </p>
                 </Card>
                 <div className="rounded-[1.5rem] border border-dashed border-sky p-6 leading-7 text-muted">
@@ -287,7 +279,7 @@ export default function InvitedPage() {
                     <li>What you were trying to do</li>
                     <li>What happened instead</li>
                     <li>How it made you feel — “annoyed” is useful</li>
-                    <li>A screenshot, if you can grab one</li>
+                    <li>Which screen you were on</li>
                   </ul>
                 </div>
               </div>
