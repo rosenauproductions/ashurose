@@ -1,5 +1,4 @@
 import Image from "next/image";
-import Link from "next/link";
 import { SiteFooter, SiteHeader } from "./components/site-chrome";
 import { WaitlistCta } from "./components/waitlist-cta";
 
@@ -433,11 +432,6 @@ export default function Home() {
               ))}
             </dl>
           </div>
-          <p className="mt-10">
-            <Link className="text-sm font-semibold text-cta underline decoration-cta decoration-2 underline-offset-4 hover:opacity-80" href="/familyflow">
-              See how FamilyFlow works, step by step
-            </Link>
-          </p>
         </section>
 
         <section id="contact" className="mx-auto mb-16 w-full max-w-6xl px-6">

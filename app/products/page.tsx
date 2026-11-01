@@ -1,13 +1,12 @@
 import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
-import familyflowWall from "../../public/familyflow-wall.png";
 import { SiteFooter, SiteHeader } from "../components/site-chrome";
 
 export const metadata: Metadata = {
   title: "Products",
   description:
-    "AshurRose is a software solutions company. Products: FamilyFlow, chores and rewards for kids on a shared wall, and Hinterviewer, video resumes for trade schools.",
+    "AshurRose is a software solutions company. Products: FamilyFlow, chores and rewards for kids on every family screen, and Hinterviewer, video resumes for trade schools.",
 };
 
 export default function ProductsPage() {
@@ -27,11 +26,11 @@ export default function ProductsPage() {
           <article className="flex flex-col overflow-hidden rounded-[2rem] border border-line bg-card">
             <div className="relative aspect-[16/10] w-full bg-frost">
               <Image
-                src={familyflowWall}
-                alt="FamilyFlow wall showing kids’ chores beside the week’s schedule"
+                src="/shots/desk.webp"
+                alt="FamilyFlow on a computer: how each kid is doing with chores, homework, money and points"
                 fill
                 sizes="(max-width: 1024px) 100vw, 560px"
-                className="object-cover object-center"
+                className="object-cover object-left-top"
               />
             </div>
             <div className="flex flex-1 flex-col p-8">
@@ -41,13 +40,14 @@ export default function ProductsPage() {
               <h2 className="mt-2 text-3xl font-bold">FamilyFlow</h2>
               <p className="mt-3 flex-1 leading-7 text-muted">
                 FamilyFlow helps families organize kids’ chores and reward them
-                when the work is done—on a shared wall everyone can see. The week
-                hangs right beside it.
+                when the work is done, on every phone, tablet and computer in the
+                house. Jobs, money, homework and the family calendar live right
+                beside it.
               </p>
               <div className="mt-6 flex flex-wrap gap-4 text-sm font-semibold">
                 <Link
                   className="underline decoration-cta decoration-2 underline-offset-4 hover:text-cta"
-                  href="/familyflow"
+                  href="/"
                 >
                   View FamilyFlow
                 </Link>

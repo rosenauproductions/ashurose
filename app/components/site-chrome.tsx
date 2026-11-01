@@ -17,8 +17,11 @@ export function SiteHeader() {
         <Link className="hover:text-foreground" href="/">
           Home
         </Link>
-        <Link className="hover:text-foreground" href="/familyflow">
-          FamilyFlow
+        <Link className="hidden hover:text-foreground sm:inline" href="/#features">
+          Features
+        </Link>
+        <Link className="hidden hover:text-foreground sm:inline" href="/#pricing">
+          Pricing
         </Link>
         <Link className="hover:text-foreground" href="/products">
           Products
