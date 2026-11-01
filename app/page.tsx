@@ -15,13 +15,13 @@ const weekdays = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
 type Shot = { src: string; w: number; h: number; alt: string };
 
 const shots = {
-  wall: { src: "/shots/wall.png", w: 1920, h: 1080, alt: "FamilyFlow on a kitchen wall screen: each kid's chores, the family calendar, weather and the time" },
-  kid: { src: "/shots/phone-kid.png", w: 390, h: 844, alt: "A kid's phone showing her chores for today and her points" },
-  parent: { src: "/shots/phone-parent.png", w: 390, h: 844, alt: "A parent's phone with everyone's chores" },
-  desk: { src: "/shots/desk.png", w: 1440, h: 900, alt: "FamilyFlow Desktop for planning the week on a computer" },
-  jobs: { src: "/shots/jobs.png", w: 1440, h: 900, alt: "Jobs and money: each kid's balance, jobs waiting for approval and payouts" },
-  print: { src: "/shots/print-chart.png", w: 1400, h: 1000, alt: "A printable chore chart with a picture for each chore and a circle for each day" },
-  olive: { src: "/shots/olive.png", w: 900, h: 900, alt: "Olive, FamilyFlow's puppy helper, offering to walk a parent through a new chore" },
+  wall: { src: "/shots/wall.webp", w: 2400, h: 1350, alt: "FamilyFlow on a kitchen wall screen: the family's week, each kid's chores, weather, school news and the time" },
+  kid: { src: "/shots/phone-kid.webp", w: 780, h: 1688, alt: "Maya's phone: 2 of 5 chores done today and what's still to do" },
+  parent: { src: "/shots/phone-parent.webp", w: 780, h: 1688, alt: "A parent's phone showing how far along each kid is today" },
+  desk: { src: "/shots/desk-calendar.webp", w: 2000, h: 1250, alt: "FamilyFlow Desktop: the family's week on a computer" },
+  jobs: { src: "/shots/jobs.webp", w: 2000, h: 1250, alt: "Jobs and money: each kid's balance, a job waiting for approval, and the money history" },
+  print: { src: "/shots/print-chart-page.webp", w: 1600, h: 1237, alt: "A printed chore chart for Maya with a picture for each chore and a circle for each day" },
+  olive: { src: "/shots/olive.webp", w: 860, h: 1720, alt: "Olive, FamilyFlow's puppy helper, sharing news and cheering on a kid" },
 } satisfies Record<string, Shot>;
 
 function Screenshot({ shot, className = "", sizes, priority }: { shot: Shot; className?: string; sizes: string; priority?: boolean }) {
@@ -305,10 +305,8 @@ export default function Home() {
 
         {/* 4. Olive & printables */}
         <section id="olive" className="bg-frost py-20">
-          <div className="mx-auto grid max-w-6xl items-center gap-12 px-6 lg:grid-cols-[360px_minmax(0,1fr)]">
-            <figure className="overflow-hidden rounded-[1.5rem] border border-line bg-card">
-              <Screenshot shot={shots.olive} sizes="360px" />
-            </figure>
+          <div className="mx-auto grid max-w-6xl items-center gap-12 px-6 lg:grid-cols-[300px_minmax(0,1fr)]">
+            <Phone shot={shots.olive} />
             <div>
               <p className={kicker}>Meet Olive</p>
               <h2 className={h2}>A friendly helper who knows the app.</h2>
