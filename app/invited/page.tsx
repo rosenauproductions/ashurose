@@ -170,8 +170,8 @@ export default function InvitedPage() {
               />
               <Step
                 n={4}
-                title="Put it where everyone sees it"
-                body="A tablet on the wall works best, but any screen in a shared spot will do."
+                title="Get the kids signed in"
+                body="Give each kid their own sign-in code so they can check off chores and see their rewards on any phone, tablet, or computer. No Google account needed."
               />
               </ol>
               <div className="mt-8 flex flex-col items-start gap-3 rounded-[1.5rem] bg-sky-deep p-6 text-white sm:flex-row sm:items-center sm:justify-between">
@@ -228,11 +228,11 @@ export default function InvitedPage() {
                   sees the day at a glance.
                 </p>
               </Card>
-              <Card kicker="Any screen" title="Wall, phone, or computer">
+              <Card kicker="Any screen" title="Phone, tablet, or computer">
                 <p>
-                  Put it on a tablet in the kitchen, use it from your phone,
-                  or open it on a computer. Kids sign in with a simple code —
-                  no Google account needed.
+                  Use it from your phone, a tablet, or a computer — everyone
+                  sees the same chores, rewards, and week. A shared tablet in
+                  the kitchen is a nice extra, not a must.
                 </p>
               </Card>
               <Card kicker="Your family’s data" title="Private by default">
@@ -259,7 +259,7 @@ export default function InvitedPage() {
                   While FamilyFlow is in this early development stage, there are
                   no apps to download from the App Store or Google Play yet.
                   Instead, FamilyFlow runs in your web browser and gives you the
-                  same experience the apps will — on a wall tablet, a phone, or a
+                  same experience the apps will — on a phone, a tablet, or a
                   computer.
                 </p>
                 <p>
