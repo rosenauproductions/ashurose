@@ -18,6 +18,7 @@ const shots = {
   wall: { src: "/shots/wall.webp", w: 2400, h: 1350, alt: "FamilyFlow on a kitchen wall screen: the family's week, each kid's chores, weather, school news and the time" },
   kid: { src: "/shots/phone-kid.webp", w: 780, h: 1688, alt: "Maya's phone: 2 of 5 chores done today and what's still to do" },
   parent: { src: "/shots/phone-parent.webp", w: 780, h: 1688, alt: "A parent's phone showing how far along each kid is today" },
+  overview: { src: "/shots/desk.webp", w: 2000, h: 1250, alt: "FamilyFlow on a computer: how each kid is doing today, with chores done, homework, money and points" },
   desk: { src: "/shots/desk-calendar.webp", w: 2000, h: 1250, alt: "FamilyFlow Desktop: the family's week on a computer" },
   jobs: { src: "/shots/jobs.webp", w: 2000, h: 1250, alt: "Jobs and money: each kid's balance, a job waiting for approval, and the money history" },
   print: { src: "/shots/print-chart-page.webp", w: 1600, h: 1237, alt: "A printed chore chart for Maya with a picture for each chore and a circle for each day" },
@@ -50,24 +51,24 @@ function Phone({ shot }: { shot: Shot }) {
 
 const screens = [
   {
-    name: "The kitchen wall",
-    body: "A big touch screen where everyone can see whose turn it is. Kids tap to check things off. A parent PIN keeps the settings safe, and it dims at bedtime.",
+    name: "Phones for kids",
+    body: "Their own chores, points and money. A simple code signs them in. No email, no social anything.",
   },
   {
     name: "Phones for parents",
     body: "Add a chore in the car, approve a job from work, get a reminder before practice.",
   },
   {
-    name: "Phones for kids",
-    body: "Their own chores, points and money. A simple code signs them in. No email, no social anything.",
-  },
-  {
     name: "Desktop",
     body: "Plan the week on a computer with a keyboard and a big calendar. See when every chore comes up.",
   },
   {
-    name: "TV and tablets",
+    name: "Tablets and TV",
     body: "Apps for Android tablets and Samsung TVs. Pair with a QR code and it starts with the device.",
+  },
+  {
+    name: "A kitchen screen, if you like",
+    body: "Optional: a shared touch screen where everyone sees whose turn it is, with a parent PIN and a bedtime dim.",
   },
 ];
 
@@ -133,12 +134,12 @@ const featureGroups: Array<{ title: string; items: string[] }> = [
   {
     title: "Every screen",
     items: [
-      "Touch wall with kiosk mode and sleep schedule",
       "Parent and kid phone apps",
       "Desktop for planning",
       "Android tablet and Samsung TV apps",
       "Changes show everywhere in seconds",
-      "Parent PIN lock on the wall",
+      "Optional shared kitchen screen with kiosk mode",
+      "Parent PIN lock on shared screens",
     ],
   },
   {
@@ -148,7 +149,7 @@ const featureGroups: Array<{ title: string; items: string[] }> = [
       "Answers questions and troubleshoots",
       "Printable chore, job, homework and list pages",
       "Scan a filled-in chart to check it off",
-      "Weather, clock and news on the wall",
+      "Weather, clock and school news",
     ],
   },
 ];
@@ -159,7 +160,7 @@ const plans = [
     monthly: "$4.99",
     yearly: "$49.99",
     blurb: "For smaller families getting organized.",
-    items: ["Up to 4 people", "Chores, points and rewards", "Calendar with Google sync", "Lists and weather", "Olive and printables", "Every screen: wall, phones, Desktop, TV"],
+    items: ["Up to 4 people", "Chores, points and rewards", "Calendar with Google sync", "Lists and weather", "Olive and printables", "Phones, tablets, computers and TV"],
   },
   {
     name: "Premium",
@@ -172,8 +173,8 @@ const plans = [
 ];
 
 const faqs = [
-  ["Do I need a big screen on the wall?", "No. FamilyFlow works on phones and computers by themselves. The wall is the best part for a lot of families, and any touch screen, tablet or TV will do."],
-  ["Do my kids need their own phones or email?", "No. Kids can use the wall. If they have a phone or tablet, a simple code signs them in. No email needed."],
+  ["Do I need special hardware?", "No. FamilyFlow works on the phones, tablets and computers you already have. A shared screen in the kitchen is an optional extra; any tablet or touch screen will do."],
+  ["Do my kids need their own phones or email?", "No email, ever. Kids sign in with a simple code on any phone, tablet or computer, or use a shared family device."],
   ["Do I have to use Google Calendar?", "No. FamilyFlow has its own family calendar. If you already use Google, connect it and pick which calendars show."],
   ["Who can see our family's information?", "Only your family. Google sign-in keys are encrypted, and our support team can't look at your family unless a parent says yes."],
 ];
@@ -213,7 +214,7 @@ export default function Home() {
               Chores they finish. <span className="text-cta">Rewards they can see.</span>
             </h1>
             <p className="mt-4 max-w-2xl text-xl font-medium text-sky-deep sm:text-2xl">
-              One family hub on the kitchen wall, every phone and the computer. Chores, rewards, money, homework and the week, all in one place.
+              One family hub on every phone, tablet and computer. Chores, rewards, money, homework and the week, all in one place.
             </p>
             <div className="mt-8">
               <WaitlistCta variant="light" />
@@ -224,9 +225,12 @@ export default function Home() {
             <div className="relative">
               <div aria-hidden className="pointer-events-none absolute -bottom-5 left-8 right-10 top-10 rounded-[2.5rem] bg-sky-deep" />
               <div aria-hidden className="pointer-events-none absolute -right-3 top-2 h-24 w-24 rounded-full bg-cta/80 sm:h-28 sm:w-28" />
-              <figure className="relative z-10 overflow-hidden rounded-[2rem] border-[6px] border-card bg-card shadow-[0_30px_70px_rgba(28,36,48,0.16)]">
-                <Screenshot shot={shots.wall} priority sizes="(max-width: 1152px) 100vw, 1152px" />
+              <figure className="relative z-10 overflow-hidden rounded-[2rem] border-[6px] border-card bg-card shadow-[0_30px_70px_rgba(28,36,48,0.16)] lg:mr-40">
+                <Screenshot shot={shots.overview} priority sizes="(max-width: 1152px) 100vw, 960px" />
               </figure>
+              <div className="relative z-20 -mt-24 ml-auto w-40 sm:-mt-40 sm:w-52 lg:absolute lg:-bottom-10 lg:right-0 lg:mt-0 lg:w-60">
+                <Phone shot={shots.kid} />
+              </div>
             </div>
           </div>
         </section>
@@ -251,8 +255,8 @@ export default function Home() {
               <Points items={rewards} />
             </div>
             <div className="lg:sticky lg:top-8">
-              <Phone shot={shots.kid} />
-              <p className="mt-4 text-center text-sm text-muted">Maya’s phone: today’s chores and her points.</p>
+              <Phone shot={shots.parent} />
+              <p className="mt-4 text-center text-sm text-muted">A parent’s phone: how each kid is doing today.</p>
             </div>
           </div>
         </section>
@@ -261,16 +265,24 @@ export default function Home() {
         <section id="screens" className="relative overflow-hidden bg-sky-deep py-20 text-card">
           <p className="pointer-events-none absolute -bottom-8 left-0 text-[16vw] font-bold leading-none text-white/5">EVERYWHERE</p>
           <div className="relative mx-auto max-w-6xl px-6">
-            <p className="text-sm font-semibold uppercase text-mist">On every screen in the house</p>
+            <p className="text-sm font-semibold uppercase text-mist">On every screen you already have</p>
             <h2 className="mt-3 max-w-4xl text-4xl font-bold leading-tight sm:text-5xl">Change it anywhere. Every screen updates.</h2>
             <p className="mt-5 max-w-2xl text-lg leading-8 text-mist">
-              A big touch wall for the kitchen, phone apps for parents and kids, Desktop for planning the week, and TV and tablet apps.
+              Phone apps for parents and kids, Desktop for planning the week, and tablet and TV apps. Want a shared screen in the kitchen? That works too.
             </p>
-            <div className="mt-10 grid items-end gap-8 lg:grid-cols-[minmax(0,1fr)_260px]">
-              <figure className="overflow-hidden rounded-[1.5rem] border-4 border-white/20 bg-card">
-                <Screenshot shot={shots.desk} sizes="(max-width: 1024px) 100vw, 820px" />
+            <div className="mt-10 grid items-start gap-6 lg:grid-cols-[minmax(0,1.25fr)_minmax(0,1fr)]">
+              <figure>
+                <div className="overflow-hidden rounded-[1.5rem] border-4 border-white/20 bg-card">
+                  <Screenshot shot={shots.desk} sizes="(max-width: 1024px) 100vw, 640px" />
+                </div>
+                <figcaption className="mt-3 text-sm text-mist">Desktop: plan the week on a computer.</figcaption>
               </figure>
-              <Phone shot={shots.parent} />
+              <figure>
+                <div className="overflow-hidden rounded-[1.5rem] border-4 border-white/20 bg-card">
+                  <Screenshot shot={shots.wall} sizes="(max-width: 1024px) 100vw, 520px" />
+                </div>
+                <figcaption className="mt-3 text-sm text-mist">Optional: a shared screen in the kitchen.</figcaption>
+              </figure>
             </div>
             <ul className="mt-10 grid gap-4 sm:grid-cols-2 lg:grid-cols-5">
               {screens.map((s) => (
