@@ -99,7 +99,8 @@ export default function InvitedPage() {
           <div className="mx-auto w-full max-w-4xl px-6">
             <p className="text-sm font-semibold uppercase text-mist">The deal</p>
             <h2 className="mt-2 text-4xl font-bold leading-tight sm:text-5xl">
-              Free for your family. The price is your honesty.
+              Free for your family — your honesty is the only thing we want in
+              return.
             </h2>
             <p className="mt-6 text-lg leading-8 text-white/90">
               Invited families get FamilyFlow — every feature, including
