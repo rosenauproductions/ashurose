@@ -18,14 +18,12 @@ const APP_URL = "https://familyflow.ashurose.com/login";
 
 function Step({ n, title, body }: { n: number; title: string; body: React.ReactNode }) {
   return (
-    <li className="flex gap-4">
-      <span className="flex h-9 w-9 shrink-0 items-center justify-center rounded-full bg-cta text-sm font-bold text-white">
+    <li className="flex flex-col rounded-[1.5rem] border border-line bg-frost p-6">
+      <span className="flex h-14 w-14 items-center justify-center rounded-full bg-cta text-2xl font-bold text-white shadow-[0_8px_20px_rgba(43,123,191,0.35)]">
         {n}
       </span>
-      <div>
-        <h3 className="text-lg font-semibold">{title}</h3>
-        <p className="mt-1 leading-7 text-muted">{body}</p>
-      </div>
+      <h3 className="mt-5 text-xl font-bold leading-tight">{title}</h3>
+      <p className="mt-2 leading-7 text-muted">{body}</p>
     </li>
   );
 }
@@ -65,16 +63,16 @@ export default function InvitedPage() {
               </p>
               <div className="mt-8 flex flex-wrap gap-3">
                 <a
-                  href={APP_URL}
+                  href="#get-started"
                   className="inline-flex rounded-full bg-cta px-6 py-3 text-sm font-semibold text-white hover:opacity-90"
                 >
-                  Open FamilyFlow
+                  Start here ↓
                 </a>
                 <a
                   href="#the-deal"
                   className="inline-flex rounded-full border border-line bg-card px-6 py-3 text-sm font-semibold hover:bg-frost"
                 >
-                  Read the deal first
+                  Read the deal
                 </a>
               </div>
             </div>
@@ -128,6 +126,69 @@ export default function InvitedPage() {
               That’s it. Keep the feedback coming and FamilyFlow stays free
               for your family — now, and after FamilyFlow officially launches.
             </p>
+          </div>
+        </section>
+
+        {/* Getting started — the most important part of the page */}
+        <section id="get-started" className="scroll-mt-6 py-16">
+          <div className="mx-auto w-full max-w-6xl px-6">
+            <div className="rounded-[2rem] border-4 border-cta bg-card p-6 shadow-[0_30px_70px_rgba(28,36,48,0.14)] sm:p-10">
+              <p className="inline-flex rounded-full bg-cta px-4 py-1.5 text-xs font-bold uppercase tracking-wide text-white">
+                Start here
+              </p>
+              <h2 className="mt-4 text-4xl font-bold leading-tight sm:text-5xl">
+                Getting started
+              </h2>
+              <p className="mt-3 max-w-2xl text-lg leading-8 text-muted">
+                Four steps and your family is up and running. Do them in order —
+                step 1 is the one that matters most.
+              </p>
+              <ol className="mt-8 grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
+              <Step
+                n={1}
+                title="Sign in with Google"
+                body={
+                  <>
+                    Open{" "}
+                    <a className="font-semibold text-cta hover:underline" href={APP_URL}>
+                      familyflow.ashurose.com
+                    </a>{" "}
+                    and sign in with the Google account we invited. If you
+                    were given an invite code, enter it when asked.
+                  </>
+                }
+              />
+              <Step
+                n={2}
+                title="Set up your family"
+                body="Add the people in your house. A short setup guide walks you through it."
+              />
+              <Step
+                n={3}
+                title="Add a few chores"
+                body="Start small — a couple of chores per kid — and add rewards they can work toward."
+              />
+              <Step
+                n={4}
+                title="Put it where everyone sees it"
+                body="A tablet on the wall works best, but any screen in a shared spot will do."
+              />
+              </ol>
+              <div className="mt-8 flex flex-col items-start gap-3 rounded-[1.5rem] bg-sky-deep p-6 text-white sm:flex-row sm:items-center sm:justify-between">
+                <p className="text-lg font-semibold">
+                  Ready? Step 1 starts here.
+                  <span className="block text-sm font-normal text-white/85">
+                    Use the same Google account we sent your invite to.
+                  </span>
+                </p>
+                <a
+                  href={APP_URL}
+                  className="inline-flex shrink-0 rounded-full bg-card px-7 py-3.5 text-base font-bold text-foreground hover:bg-frost"
+                >
+                  Open FamilyFlow →
+                </a>
+              </div>
+            </div>
           </div>
         </section>
 
@@ -217,71 +278,33 @@ export default function InvitedPage() {
           </div>
         </section>
 
-        {/* Getting started */}
+        {/* Sending feedback */}
         <section className="bg-frost py-16">
-          <div className="mx-auto grid w-full max-w-6xl gap-12 px-6 lg:grid-cols-2">
-            <div>
-              <p className="text-sm font-semibold uppercase text-sky">Getting started</p>
-              <h2 className="mt-2 text-4xl font-bold leading-tight">Up and running in minutes.</h2>
-              <ol className="mt-8 space-y-6">
-                <Step
-                  n={1}
-                  title="Sign in with Google"
-                  body={
-                    <>
-                      Open{" "}
-                      <a className="font-semibold text-cta hover:underline" href={APP_URL}>
-                        familyflow.ashurose.com
-                      </a>{" "}
-                      and sign in with the Google account we invited. If you
-                      were given an invite code, enter it when asked.
-                    </>
-                  }
-                />
-                <Step
-                  n={2}
-                  title="Set up your family"
-                  body="Add the people in your house. A short setup guide walks you through it."
-                />
-                <Step
-                  n={3}
-                  title="Add a few chores"
-                  body="Start small — a couple of chores per kid — and add rewards they can work toward."
-                />
-                <Step
-                  n={4}
-                  title="Put it where everyone sees it"
-                  body="A tablet on the wall works best, but any screen in a shared spot will do."
-                />
-              </ol>
-            </div>
-
-            <div>
-              <p className="text-sm font-semibold uppercase text-sky">Sending feedback</p>
-              <h2 className="mt-2 text-4xl font-bold leading-tight">Right inside the app.</h2>
-              <div className="mt-8 space-y-5">
-                <Card kicker="One place for everything" title="Settings → Help & feedback">
-                  <p>
-                    Every bug, idea, and wish-list item goes through{" "}
-                    <strong className="text-foreground">Settings → Help &amp; feedback</strong>{" "}
-                    in FamilyFlow. Pick bug, idea, or question and tell us what’s
-                    on your mind.
-                  </p>
-                  <p>
-                    It sends along which device you’re on, so you don’t have to
-                    explain your setup — and our replies show up right there, so
-                    the whole conversation stays in one place.
-                  </p>
-                </Card>
-                <div className="rounded-[1.5rem] border border-dashed border-sky p-6 leading-7 text-muted">
-                  <p className="font-semibold text-foreground">What makes a great report</p>
-                  <ul className="mt-2 list-disc space-y-1 pl-5">
-                    <li>What you were trying to do</li>
-                    <li>What happened instead</li>
-                    <li>How it made you feel — “annoyed” is useful</li>
-                    <li>Which screen you were on</li>
-                  </ul>
-                </div>
+          <div className="mx-auto w-full max-w-4xl px-6">
+            <p className="text-sm font-semibold uppercase text-sky">Sending feedback</p>
+            <h2 className="mt-2 text-4xl font-bold leading-tight">Right inside the app.</h2>
+            <div className="mt-8 space-y-5">
+              <Card kicker="One place for everything" title="Settings → Help & feedback">
+                <p>
+                  Every bug, idea, and wish-list item goes through{" "}
+                  <strong className="text-foreground">Settings → Help &amp; feedback</strong>{" "}
+                  in FamilyFlow. Pick bug, idea, or question and tell us what’s
+                  on your mind.
+                </p>
+                <p>
+                  It sends along which device you’re on, so you don’t have to
+                  explain your setup — and our replies show up right there, so
+                  the whole conversation stays in one place.
+                </p>
+              </Card>
+              <div className="rounded-[1.5rem] border border-dashed border-sky p-6 leading-7 text-muted">
+                <p className="font-semibold text-foreground">What makes a great report</p>
+                <ul className="mt-2 list-disc space-y-1 pl-5">
+                  <li>What you were trying to do</li>
+                  <li>What happened instead</li>
+                  <li>How it made you feel — “annoyed” is useful</li>
+                  <li>Which screen you were on</li>
+                </ul>
               </div>
             </div>
           </div>
