@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Image from "next/image";
 import familyflowWall from "../../public/familyflow-wall.png";
+import oliveShot from "../../public/shots/olive.webp";
 import { SiteFooter, SiteHeader } from "../components/site-chrome";
 
 /**
@@ -143,6 +144,28 @@ export default function InvitedPage() {
                 Four steps and your family is up and running. Do them in order —
                 step 1 is the one that matters most.
               </p>
+              <div className="mt-8 grid items-center gap-6 rounded-[1.5rem] border-2 border-sky bg-frost p-6 sm:grid-cols-[auto_1fr] sm:p-8">
+                <div className="relative mx-auto h-56 w-32 overflow-hidden rounded-2xl border-4 border-card shadow-[0_12px_30px_rgba(28,36,48,0.18)] sm:mx-0">
+                  <Image
+                    src={oliveShot}
+                    alt="Olive, FamilyFlow’s helper dog, offering a setup checklist and other shortcuts"
+                    fill
+                    sizes="128px"
+                    className="object-cover object-top"
+                  />
+                </div>
+                <div>
+                  <p className="text-sm font-semibold uppercase text-cta">Not sure what to do next?</p>
+                  <h3 className="mt-1 text-3xl font-bold leading-tight">Ask Olive. She’ll guide you.</h3>
+                  <p className="mt-3 max-w-2xl text-lg leading-8 text-muted">
+                    Olive is the friendly dog inside FamilyFlow. Tap her and type
+                    what you want — like <strong className="text-foreground">“help me set up”</strong>,{" "}
+                    <strong className="text-foreground">“add a chore”</strong>, or{" "}
+                    <strong className="text-foreground">“get a kid on their phone”</strong> — and
+                    she’ll walk you through it step by step, including every step below.
+                  </p>
+                </div>
+              </div>
               <ol className="mt-8 grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
               <Step
                 n={1}
@@ -161,7 +184,7 @@ export default function InvitedPage() {
               <Step
                 n={2}
                 title="Set up your family"
-                body="Add the people in your house. A short setup guide walks you through it."
+                body="Add the people in your house. Olive walks you through it."
               />
               <Step
                 n={3}
