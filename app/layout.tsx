@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Script from "next/script";
 import { Libre_Franklin } from "next/font/google";
 import "./globals.css";
 
@@ -39,7 +40,10 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
       lang="en"
       className={`${libreFranklin.variable} ${libreFranklin.className} h-full antialiased`}
     >
-      <body className="min-h-full flex flex-col">{children}</body>
+      <body className="min-h-full flex flex-col">
+        {children}
+        <Script src="https://resume-rho-taupe.vercel.app/track.js" data-site="ashurose" strategy="afterInteractive" />
+      </body>
     </html>
   );
 }
