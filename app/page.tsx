@@ -142,7 +142,7 @@ const featureGroups: Array<{ title: string; items: string[] }> = [
     ],
   },
   {
-    title: "Olive & printables",
+    title: "Built-in helper & paper charts",
     items: [
       "Guided tours, field by field",
       "Answers questions and troubleshoots",
@@ -159,7 +159,7 @@ const plans = [
     monthly: "$4.99",
     yearly: "$49.99",
     blurb: "For smaller families getting organized.",
-    items: ["Up to 4 people", "Chores, points and rewards", "Calendar with Google sync", "Lists and weather", "Olive and printables", "Phones, tablets, computers and TV"],
+    items: ["Up to 4 people", "Chores, points and rewards", "Calendar with Google sync", "Lists and weather", "A built-in helper and printable chore charts", "Phones, tablets, computers and TV"],
   },
   {
     name: "Premium",
@@ -314,12 +314,12 @@ export default function Home() {
           </ul>
         </section>
 
-        {/* 4. Olive & printables */}
+        {/* 4. Built-in helper (Olive) & paper chore charts */}
         <section id="olive" className="bg-frost py-20">
           <div className="mx-auto grid max-w-6xl items-center gap-12 px-6 lg:grid-cols-[300px_minmax(0,1fr)]">
             <Phone shot={shots.olive} />
             <div>
-              <p className={kicker}>Meet Olive</p>
+              <p className={kicker}>A built-in helper</p>
               <h2 className={h2}>A friendly helper who knows the app.</h2>
               <p className={lede}>Olive is FamilyFlow’s puppy. She shows you around, answers questions and helps when something isn’t right.</p>
               <Points items={helper} />
@@ -327,7 +327,7 @@ export default function Home() {
           </div>
           <div className="mx-auto mt-20 grid max-w-6xl items-center gap-12 px-6 lg:grid-cols-[minmax(0,1fr)_minmax(0,1.1fr)]">
             <div>
-              <p className={kicker}>Printables</p>
+              <p className={kicker}>Paper chore charts</p>
               <h2 className={h2}>Paper on the fridge, still in the app.</h2>
               <p className={lede}>Some kids love a chart they can mark with a crayon. Print one, and FamilyFlow can read it back.</p>
               <Points items={printables} />
